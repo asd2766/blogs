@@ -343,25 +343,15 @@
 <p>Mocha 的作用是运行测试脚本，那么在写完代码之后，我们需要先编写测试脚本。</p>
 </blockquote>
 <p>现在我们有一个 add.js 的脚本</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function add(a, b) &#123;</span><br><span class="line">	return a + b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">module.exports = add;</span><br><span class="line"></span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">我们要测试这个脚本的正确性，就需要针对 add.js 来写一个测试脚本。</span><br><span class="line"></span><br><span class="line">&gt; 通常，测试脚本与所要测试的源码脚本同名，但是后缀名为.test.js（表示测试）或者.spec.js（表示规格）。比如，add.js的测试脚本名字就是add.test.js。</span><br></pre></td></tr></table></figure>
-<p>var add = require(‘add.js’);<br>var assert = require(‘assert’).strict;</p>
-<p>describe(‘add.js的测试’, function() {<br>    it (‘1 + 1 应该是等于 2’, function() {<br>        assert.strictEqual(add(1, 2), 2);<br>    });<br>});</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">add.test.js 是可以独立运行的</span><br><span class="line"></span><br><span class="line">在控制台运行： mocha add.test.js</span><br></pre></td></tr></table></figure>
-<p>// assert.strictEqual(add(1, 2), 2);<br>正确情况下输出结果： </p>
-<p>  add的测试<br>    1) 1 + 1 应该等于2</p>
-<p>  0 passing (13ms)<br>  1 failing</p>
-<p>// assert.strictEqual(add(1, 2), 3);<br>错误情况下输入结果：</p>
-<p> 1) add的测试<br>     1 + 1 应该等于2:</p>
-<pre><code>AssertionError [ERR_ASSERTION]: Input A expected to strictly equal input B:
-+ expected - actual
-
-   - 2
-   + 3
-+ expected - actual
-
-  -2
-  +3
-</code></pre><p><code>`</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function add(a, b) &#123;</span><br><span class="line">	return a + b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">module.exports = add;</span><br></pre></td></tr></table></figure>
+<p>我们要测试这个脚本的正确性，就需要针对 add.js 来写一个测试脚本。</p>
+<blockquote>
+<p>通常，测试脚本与所要测试的源码脚本同名，但是后缀名为.test.js（表示测试）或者.spec.js（表示规格）。比如，add.js的测试脚本名字就是add.test.js。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var add = require(&apos;add.js&apos;);</span><br><span class="line">var assert = require(&apos;assert&apos;).strict;</span><br><span class="line"></span><br><span class="line">describe(&apos;add.js的测试&apos;, function() &#123;</span><br><span class="line">	it (&apos;1 + 1 应该是等于 2&apos;, function() &#123;</span><br><span class="line">		assert.strictEqual(add(1, 2), 2);</span><br><span class="line">	&#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>add.test.js 是可以独立运行的</p>
+<p>在控制台运行： mocha add.test.js</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">// assert.strictEqual(add(1, 2), 2);</span><br><span class="line">正确情况下输出结果： </span><br><span class="line"></span><br><span class="line">  add的测试</span><br><span class="line">    1) 1 + 1 应该等于2</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  0 passing (13ms)</span><br><span class="line">  1 failing</span><br><span class="line"></span><br><span class="line">// assert.strictEqual(add(1, 2), 3);  </span><br><span class="line">错误情况下输入结果：</span><br><span class="line"></span><br><span class="line"> 1) add的测试</span><br><span class="line">     1 + 1 应该等于2:</span><br><span class="line"></span><br><span class="line">    AssertionError [ERR_ASSERTION]: Input A expected to strictly equal input B:</span><br><span class="line">	+ expected - actual</span><br><span class="line"></span><br><span class="line">	   - 2</span><br><span class="line">	   + 3</span><br><span class="line">    + expected - actual</span><br><span class="line"></span><br><span class="line">      -2</span><br><span class="line">      +3</span><br></pre></td></tr></table></figure>
 <h4 id="现在我们先来回顾下-add-test-js-脚本的代码内容"><a href="#现在我们先来回顾下-add-test-js-脚本的代码内容" class="headerlink" title="现在我们先来回顾下 add.test.js 脚本的代码内容"></a>现在我们先来回顾下 add.test.js 脚本的代码内容</h4><ol>
 <li>在测试脚本中，应该包含1个或者多个 <code>describe</code>，每个 <code>describe</code> 应该包含一个或者多个 <code>it</code>。</li>
 <li><code>describe</code> 表示测试的区域范围，可以理解成是一个 <code>function</code> 或者 <code>class</code>。它是一个函数，第一个参数表示测试的名称，从上面的例子中可以看到我们执行之后，会在控制台上先输出名称以做区分；第二个参数为执行函数，我们需要做的操作都在这个执行函数里面。</li>
