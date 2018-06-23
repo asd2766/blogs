@@ -8,19 +8,19 @@
   <link rel="dns-prefetch" href="https://asd2766.github.io/blogs">
   <title>白驹过隙的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="学习观察者模式 观察者模式 观察者模式是定义对象间的一种一对多的依赖关系，当该对象状态发生改变的时候，就会发通知给所有依赖者。  最简单的使用案例其实就是，我们给标签绑定绑定事件的时候，其实就是使用观察者模式。 比如： 123&amp;lt;button type=&amp;quot;button&amp;quot; onclick=&amp;quot;buttonClick&amp;quot;&amp;gt;	按钮点击&amp;lt;/button">
+  <meta name="description" content="学习观察者模式 观察者模式 观察者模式是定义对象间的一种一对多的依赖关系，当该对象状态发生改变的时候，就会发通知给所有依赖者。  最简单的使用案例其实就是，我们给标签绑定绑定事件的时候，其实就是使用观察者模式。 比如： 123&amp;lt;button type=&amp;quot;button&amp;quot; onclick=&amp;quot;buttonClick&amp;quot;&amp;gt;	按钮点击&amp;lt;/button&amp;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="白驹过隙的博客">
 <meta property="og:url" content="https://asd2766.github.io/blogs/2018/06/10/学习观察者模式/index.html">
 <meta property="og:site_name" content="白驹过隙的博客">
-<meta property="og:description" content="学习观察者模式 观察者模式 观察者模式是定义对象间的一种一对多的依赖关系，当该对象状态发生改变的时候，就会发通知给所有依赖者。  最简单的使用案例其实就是，我们给标签绑定绑定事件的时候，其实就是使用观察者模式。 比如： 123&amp;lt;button type=&amp;quot;button&amp;quot; onclick=&amp;quot;buttonClick&amp;quot;&amp;gt;	按钮点击&amp;lt;/button">
+<meta property="og:description" content="学习观察者模式 观察者模式 观察者模式是定义对象间的一种一对多的依赖关系，当该对象状态发生改变的时候，就会发通知给所有依赖者。  最简单的使用案例其实就是，我们给标签绑定绑定事件的时候，其实就是使用观察者模式。 比如： 123&amp;lt;button type=&amp;quot;button&amp;quot; onclick=&amp;quot;buttonClick&amp;quot;&amp;gt;	按钮点击&amp;lt;/button&amp;">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://asd2766.github.io/blogs/img/learnObserver/img1.png">
 <meta property="og:image" content="https://asd2766.github.io/blogs/img/learnObserver/img2.png">
-<meta property="og:updated_time" content="2018-06-15T01:07:52.182Z">
+<meta property="og:updated_time" content="2018-06-23T05:24:27.132Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="白驹过隙的博客">
-<meta name="twitter:description" content="学习观察者模式 观察者模式 观察者模式是定义对象间的一种一对多的依赖关系，当该对象状态发生改变的时候，就会发通知给所有依赖者。  最简单的使用案例其实就是，我们给标签绑定绑定事件的时候，其实就是使用观察者模式。 比如： 123&amp;lt;button type=&amp;quot;button&amp;quot; onclick=&amp;quot;buttonClick&amp;quot;&amp;gt;	按钮点击&amp;lt;/button">
+<meta name="twitter:description" content="学习观察者模式 观察者模式 观察者模式是定义对象间的一种一对多的依赖关系，当该对象状态发生改变的时候，就会发通知给所有依赖者。  最简单的使用案例其实就是，我们给标签绑定绑定事件的时候，其实就是使用观察者模式。 比如： 123&amp;lt;button type=&amp;quot;button&amp;quot; onclick=&amp;quot;buttonClick&amp;quot;&amp;gt;	按钮点击&amp;lt;/button&amp;">
 <meta name="twitter:image" content="https://asd2766.github.io/blogs/img/learnObserver/img1.png">
   
   
@@ -70,8 +70,6 @@
     			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">所有文章</a>
     			
             
-    			
-    			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">友链</a>
     			
             
     			
@@ -158,8 +156,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <hr>
-<h1 id="学习观察者模式"><a href="#学习观察者模式" class="headerlink" title="学习观察者模式"></a>学习观察者模式</h1><hr>
+        <h1 id="学习观察者模式"><a href="#学习观察者模式" class="headerlink" title="学习观察者模式"></a>学习观察者模式</h1><hr>
 <h2 id="观察者模式"><a href="#观察者模式" class="headerlink" title="观察者模式"></a>观察者模式</h2><blockquote>
 <p>观察者模式是定义对象间的一种一对多的依赖关系，当该对象状态发生改变的时候，就会发通知给所有依赖者。</p>
 </blockquote>
@@ -374,8 +371,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
       
     
       
-      
-      
     
       
       
@@ -387,15 +382,13 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
       
         
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">友链</a></li>
-      
         
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
       
         
     </ul>
@@ -458,10 +451,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     	</section>
     
 
-    
-    	<section class="tools-section tools-section-friends" q-show="friends">
-  		
-    	</section>
     
 
     
