@@ -149,16 +149,62 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-learnMocha2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-learn-karma-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blogs/2018/06/23/learn-karma-1/">学习Karma(一)</a>
+    </h1>
+  
+
+        
+        <a href="/blogs/2018/06/23/learn-karma-1/" class="archive-article-date">
+  	<time datetime="2018-06-22T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-23</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="学习-Mocha-测试框架-二"><a href="#学习-Mocha-测试框架-二" class="headerlink" title="学习 Mocha 测试框架(二)"></a>学习 Mocha 测试框架(二)</h1><h2 id="命令行参数"><a href="#命令行参数" class="headerlink" title="命令行参数"></a>命令行参数</h2><hr>
-<p>参考资料</p>
+        <h2 id="什么是Karma"><a href="#什么是Karma" class="headerlink" title="什么是Karma"></a>什么是Karma</h2><blockquote>
+<p>Karma is essentially a tool which spawns a web server that executes source code against test code for each of the browsers connected. The results of each test against each browser are examined and displayed via the command line to the developer such that they can see which browsers and tests passed or failed.</p>
+</blockquote>
+<p>根据 Karma 主页上所说，Karam 本质上是一个生成 web server 的工具，而不是一个测试框架。 Karma 主要作用是在各个浏览器上测试源码是否正确。</p>
+<h2 id="如何使用"><a href="#如何使用" class="headerlink" title="如何使用"></a>如何使用</h2><ol>
+<li>安装 Karma</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g karma-cli</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>初始化测试</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">karma init karma.conf.js</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1. Which testing framework do you want to use ? (mocha)</span><br><span class="line">2. Do you want to use Require.js ? (no)</span><br><span class="line">3. Do you want to capture any browsers automatically ? (Chrome)</span><br><span class="line">4. What is the location of your source and test files ? (https://cdn.bootcss.com/jquery/2.2.4/jquery.js, node_modules/should/should.js, test/**.js)</span><br><span class="line">5. Should any of the files included by the previous patterns be excluded ? ()</span><br><span class="line">6. Do you want Karma to watch all the files and run the tests on change ? (yes)</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>启动测试</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">karma start karma.conf.js</span><br></pre></td></tr></table></figure>
+<p>如果在终端上看到</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Chrome 67.0.3396 (Mac OS X 10.13.5): Executed 4 of 4 SUCCESS (2.68 secs / 0.334 secs)</span><br></pre></td></tr></table></figure>
+<p>表示所有的方法都已经测试通过</p>
+<p>如果在终端上看到</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">... // 这里会列出什么方法失败了，可以自己对照查看</span><br><span class="line"></span><br><span class="line">Chrome 67.0.3396 (Mac OS X 10.13.5): Executed 4 of 4 (1 FAILED) (2.024 secs / 2.009 secs)</span><br></pre></td></tr></table></figure>
+<p>表示有方法失败了，需要进行修改。</p>
+<h2 id="参数介绍"><a href="#参数介绍" class="headerlink" title="参数介绍"></a>参数介绍</h2><p>打开 karma.config.js 我们可以看到</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line">// Karma configuration</span><br><span class="line">// Generated on Thu Jun 21 2018 22:28:40 GMT+0800 (GMT+08:00)</span><br><span class="line"></span><br><span class="line">module.exports = function(config) &#123;</span><br><span class="line">  config.set(&#123;</span><br><span class="line"></span><br><span class="line">    // base path that will be used to resolve all patterns (eg. files, exclude)</span><br><span class="line">    basePath: &apos;&apos;,</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    // frameworks to use</span><br><span class="line">    // available frameworks: https://npmjs.org/browse/keyword/karma-adapter</span><br><span class="line">    frameworks: [&apos;mocha&apos;],</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    // list of files / patterns to load in the browser</span><br><span class="line">    files: [</span><br><span class="line">      &apos;https://cdn.bootcss.com/jquery/2.2.4/jquery.js&apos;, &apos;node_modules/should/should.js&apos;, </span><br><span class="line">      &apos;test/**.js&apos;,</span><br><span class="line">    ],</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    // list of files to exclude</span><br><span class="line">    exclude: [</span><br><span class="line">    ],</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    // preprocess matching files before serving them to the browser</span><br><span class="line">    // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor</span><br><span class="line">    preprocessors: &#123;</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    // test results reporter to use</span><br><span class="line">    // possible values: &apos;dots&apos;, &apos;progress&apos;</span><br><span class="line">    // available reporters: https://npmjs.org/browse/keyword/karma-reporter</span><br><span class="line">    reporters: [&apos;progress&apos;],</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    // web server port</span><br><span class="line">    port: 9876,</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    // enable / disable colors in the output (reporters and logs)</span><br><span class="line">    colors: true,</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    // level of logging</span><br><span class="line">    // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG</span><br><span class="line">    logLevel: config.LOG_INFO,</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    // enable / disable watching file and executing tests whenever any file changes</span><br><span class="line">    autoWatch: true,</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    // start these browsers</span><br><span class="line">    // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher</span><br><span class="line">    browsers: [&apos;Chrome&apos;],</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    // Continuous Integration mode</span><br><span class="line">    // if true, Karma captures browsers, runs the tests and exits</span><br><span class="line">    singleRun: false,</span><br><span class="line"></span><br><span class="line">    // Concurrency level</span><br><span class="line">    // how many browser should be started simultaneous</span><br><span class="line">    concurrency: Infinity</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ol>
-<li><a href="http://www.ruanyifeng.com/blog/2015/12/a-mocha-tutorial-of-examples.html" target="_blank" rel="noopener">测试框架 Mocha 实例教程 – 阮一峰</a></li>
-<li><a href="https://segmentfault.com/a/1190000011362879" target="_blank" rel="noopener">Mocha中文教程</a></li>
+<li>frameworks： 用到的测试框架。</li>
+<li>files：可以配置通配符把源代码和测试代码加载进来。</li>
+<li>browsers：需要启动的浏览器。</li>
+<li>autoWatch：观察文件是否有变动，如果有变动就自动更新。</li>
+</ol>
+<hr>
+<p>参考资料： </p>
+<ol>
+<li><a href="https://iyaozhen.com/use-karma-and-mocha-for-fe-tdd.html" target="_blank" rel="noopener">使用karma+mocha进行前端测试驱动开发（一）</a></li>
+<li><a href="http://karma-runner.github.io/2.0/intro/how-it-works.html" target="_blank" rel="noopener">Karma</a></li>
 </ol>
 
       
@@ -172,7 +218,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/blogs/2018/06/21/learnMocha2/">展开全文 >></a>
+          <a class="article-more-a" href="/blogs/2018/06/23/learn-karma-1/">展开全文 >></a>
         </p>
       
 
@@ -202,12 +248,95 @@
 
 
   
-    <article id="post-learnMocha1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-learn-mocha-2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blogs/2018/06/23/learn-mocha-2/">学习 Mocha 测试框架(二)</a>
+    </h1>
+  
+
+        
+        <a href="/blogs/2018/06/23/learn-mocha-2/" class="archive-article-date">
+  	<time datetime="2018-06-22T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-23</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="学习-Mocha-测试框架-一"><a href="#学习-Mocha-测试框架-一" class="headerlink" title="学习 Mocha 测试框架(一)"></a>学习 Mocha 测试框架(一)</h1><h2 id="Mocha-是什么"><a href="#Mocha-是什么" class="headerlink" title="Mocha 是什么"></a>Mocha 是什么</h2><blockquote>
+        <h2 id="命令行参数"><a href="#命令行参数" class="headerlink" title="命令行参数"></a>命令行参数</h2><hr>
+<p>参考资料</p>
+<ol>
+<li><a href="http://www.ruanyifeng.com/blog/2015/12/a-mocha-tutorial-of-examples.html" target="_blank" rel="noopener">测试框架 Mocha 实例教程 – 阮一峰</a></li>
+<li><a href="https://segmentfault.com/a/1190000011362879" target="_blank" rel="noopener">Mocha中文教程</a></li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/blogs/2018/06/23/learn-mocha-2/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-learn-mocha-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blogs/2018/06/20/learn-mocha-1/">学习 Mocha 测试框架(一)</a>
+    </h1>
+  
+
+        
+        <a href="/blogs/2018/06/20/learn-mocha-1/" class="archive-article-date">
+  	<time datetime="2018-06-19T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Mocha-是什么"><a href="#Mocha-是什么" class="headerlink" title="Mocha 是什么"></a>Mocha 是什么</h2><blockquote>
 <p>Mocha 是一个Javascript的测试框架，我们可以通过它，可以为Javascript应用添加测试，以保证其质量。</p>
 </blockquote>
 <h2 id="如何编写测试用例"><a href="#如何编写测试用例" class="headerlink" title="如何编写测试用例"></a>如何编写测试用例</h2><blockquote>
@@ -268,7 +397,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/blogs/2018/06/21/learnMocha1/">展开全文 >></a>
+          <a class="article-more-a" href="/blogs/2018/06/20/learn-mocha-1/">展开全文 >></a>
         </p>
       
 
@@ -298,12 +427,27 @@
 
 
   
-    <article id="post-NodeAssert" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-learn-node-assert" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blogs/2018/06/20/learn-node-assert/">初识 Node Assert</a>
+    </h1>
+  
+
+        
+        <a href="/blogs/2018/06/20/learn-node-assert/" class="archive-article-date">
+  	<time datetime="2018-06-19T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-20</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="初识-Node-Assert"><a href="#初识-Node-Assert" class="headerlink" title="初识 Node Assert"></a>初识 Node Assert</h1><h3 id="Assert的作用"><a href="#Assert的作用" class="headerlink" title="Assert的作用"></a>Assert的作用</h3><hr>
+        <h3 id="Assert的作用"><a href="#Assert的作用" class="headerlink" title="Assert的作用"></a>Assert的作用</h3><hr>
 <blockquote>
 <p>assert是 node 里面内中的一个对象, 主要是针对项目进行测试, 如果运行结果跟预期不同, 则会抛出异常.</p>
 <p>node版本为 10.4.1</p>
@@ -341,7 +485,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/blogs/2018/06/20/NodeAssert/">展开全文 >></a>
+          <a class="article-more-a" href="/blogs/2018/06/20/learn-node-assert/">展开全文 >></a>
         </p>
       
 
@@ -371,112 +515,27 @@
 
 
   
-    <article id="post-LearnKarma1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-learn-observer" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/blogs/2018/06/12/LearnKarma1/">学习Karma(一)</a>
+      <a class="article-title" href="/blogs/2018/06/10/learn-observer/">学习观察者模式(一)</a>
     </h1>
   
 
         
-        <a href="/blogs/2018/06/12/LearnKarma1/" class="archive-article-date">
-  	<time datetime="2018-06-11T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-12</time>
+        <a href="/blogs/2018/06/10/learn-observer/" class="archive-article-date">
+  	<time datetime="2018-06-09T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-10</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="学习Karma-一"><a href="#学习Karma-一" class="headerlink" title="学习Karma(一)"></a>学习Karma(一)</h1><h2 id="什么是Karma"><a href="#什么是Karma" class="headerlink" title="什么是Karma"></a>什么是Karma</h2><blockquote>
-<p>Karma is essentially a tool which spawns a web server that executes source code against test code for each of the browsers connected. The results of each test against each browser are examined and displayed via the command line to the developer such that they can see which browsers and tests passed or failed.</p>
-</blockquote>
-<p>根据 Karma 主页上所说，Karam 本质上是一个生成 web server 的工具，而不是一个测试框架。 Karma 主要作用是在各个浏览器上测试源码是否正确。</p>
-<h2 id="如何使用"><a href="#如何使用" class="headerlink" title="如何使用"></a>如何使用</h2><ol>
-<li>安装 Karma</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g karma-cli</span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>初始化测试</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">karma init karma.conf.js</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1. Which testing framework do you want to use ? (mocha)</span><br><span class="line">2. Do you want to use Require.js ? (no)</span><br><span class="line">3. Do you want to capture any browsers automatically ? (Chrome)</span><br><span class="line">4. What is the location of your source and test files ? (https://cdn.bootcss.com/jquery/2.2.4/jquery.js, node_modules/should/should.js, test/**.js)</span><br><span class="line">5. Should any of the files included by the previous patterns be excluded ? ()</span><br><span class="line">6. Do you want Karma to watch all the files and run the tests on change ? (yes)</span><br></pre></td></tr></table></figure>
-<ol start="3">
-<li>启动测试</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">karma start karma.conf.js</span><br></pre></td></tr></table></figure>
-<p>如果在终端上看到</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Chrome 67.0.3396 (Mac OS X 10.13.5): Executed 4 of 4 SUCCESS (2.68 secs / 0.334 secs)</span><br></pre></td></tr></table></figure>
-<p>表示所有的方法都已经测试通过</p>
-<p>如果在终端上看到</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">... // 这里会列出什么方法失败了，可以自己对照查看</span><br><span class="line"></span><br><span class="line">Chrome 67.0.3396 (Mac OS X 10.13.5): Executed 4 of 4 (1 FAILED) (2.024 secs / 2.009 secs)</span><br></pre></td></tr></table></figure>
-<p>表示有方法失败了，需要进行修改。</p>
-<h2 id="参数介绍"><a href="#参数介绍" class="headerlink" title="参数介绍"></a>参数介绍</h2><p>打开 karma.config.js 我们可以看到</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line">// Karma configuration</span><br><span class="line">// Generated on Thu Jun 21 2018 22:28:40 GMT+0800 (GMT+08:00)</span><br><span class="line"></span><br><span class="line">module.exports = function(config) &#123;</span><br><span class="line">  config.set(&#123;</span><br><span class="line"></span><br><span class="line">    // base path that will be used to resolve all patterns (eg. files, exclude)</span><br><span class="line">    basePath: &apos;&apos;,</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    // frameworks to use</span><br><span class="line">    // available frameworks: https://npmjs.org/browse/keyword/karma-adapter</span><br><span class="line">    frameworks: [&apos;mocha&apos;],</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    // list of files / patterns to load in the browser</span><br><span class="line">    files: [</span><br><span class="line">      &apos;https://cdn.bootcss.com/jquery/2.2.4/jquery.js&apos;, &apos;node_modules/should/should.js&apos;, </span><br><span class="line">      &apos;test/**.js&apos;,</span><br><span class="line">    ],</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    // list of files to exclude</span><br><span class="line">    exclude: [</span><br><span class="line">    ],</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    // preprocess matching files before serving them to the browser</span><br><span class="line">    // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor</span><br><span class="line">    preprocessors: &#123;</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    // test results reporter to use</span><br><span class="line">    // possible values: &apos;dots&apos;, &apos;progress&apos;</span><br><span class="line">    // available reporters: https://npmjs.org/browse/keyword/karma-reporter</span><br><span class="line">    reporters: [&apos;progress&apos;],</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    // web server port</span><br><span class="line">    port: 9876,</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    // enable / disable colors in the output (reporters and logs)</span><br><span class="line">    colors: true,</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    // level of logging</span><br><span class="line">    // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG</span><br><span class="line">    logLevel: config.LOG_INFO,</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    // enable / disable watching file and executing tests whenever any file changes</span><br><span class="line">    autoWatch: true,</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    // start these browsers</span><br><span class="line">    // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher</span><br><span class="line">    browsers: [&apos;Chrome&apos;],</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    // Continuous Integration mode</span><br><span class="line">    // if true, Karma captures browsers, runs the tests and exits</span><br><span class="line">    singleRun: false,</span><br><span class="line"></span><br><span class="line">    // Concurrency level</span><br><span class="line">    // how many browser should be started simultaneous</span><br><span class="line">    concurrency: Infinity</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ol>
-<li>frameworks： 用到的测试框架。</li>
-<li>files：可以配置通配符把源代码和测试代码加载进来。</li>
-<li>browsers：需要启动的浏览器。</li>
-<li>autoWatch：观察文件是否有变动，如果有变动就自动更新。</li>
-</ol>
-<hr>
-<p>参考资料： </p>
-<ol>
-<li><a href="https://iyaozhen.com/use-karma-and-mocha-for-fe-tdd.html" target="_blank" rel="noopener">使用karma+mocha进行前端测试驱动开发（一）</a></li>
-<li><a href="http://karma-runner.github.io/2.0/intro/how-it-works.html" target="_blank" rel="noopener">Karma</a></li>
-</ol>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/blogs/2018/06/12/LearnKarma1/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-学习观察者模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="学习观察者模式"><a href="#学习观察者模式" class="headerlink" title="学习观察者模式"></a>学习观察者模式</h1><hr>
-<h2 id="观察者模式"><a href="#观察者模式" class="headerlink" title="观察者模式"></a>观察者模式</h2><blockquote>
+        <h2 id="观察者模式"><a href="#观察者模式" class="headerlink" title="观察者模式"></a>观察者模式</h2><blockquote>
 <p>观察者模式是定义对象间的一种一对多的依赖关系，当该对象状态发生改变的时候，就会发通知给所有依赖者。</p>
 </blockquote>
 <p>最简单的使用案例其实就是，我们给标签绑定绑定事件的时候，其实就是使用观察者模式。 比如：</p>
@@ -519,7 +578,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/blogs/2018/06/10/学习观察者模式/">展开全文 >></a>
+          <a class="article-more-a" href="/blogs/2018/06/10/learn-observer/">展开全文 >></a>
         </p>
       
 
