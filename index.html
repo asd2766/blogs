@@ -371,14 +371,10 @@
 <p>我们其实可以在 <code>describe</code> 里面再套 <code>describe</code>，一个 <code>describe</code> 里面也可以添加多个 <code>it</code>    </p>
 </blockquote>
 <h2 id="Mocha-基本使用"><a href="#Mocha-基本使用" class="headerlink" title="Mocha 基本使用"></a>Mocha 基本使用</h2><ol>
-<li><p>我们可以直接测试单个测试脚本，直接执行 mocha add.test.js</p>
-</li>
-<li><p>我们也可以测试多个测试脚本，那么我们可以将对应的测试脚本都放到 test 文件夹下面，然后cd 到 test 文件夹后，在控制台执行 mocha test1.js test2.js test3.js</p>
-</li>
-<li><p>或者我们在上一级目录，直接执行 mocha ， 它会自动去测试 test 文件下下面的测试脚本（会执行 test 文件下所有能执行的 js 脚本）。但是它只会执行 test 第一级目录下的测试用例，更下层的并不会执行到。</p>
-</li>
-<li><p>如果我们想要执行到 <code>test</code> 文件夹更下层的测试脚本，那么我们需要加上 <code>--recursive</code>， 这样就会执行到 <code>test</code> 文件夹下所有的测试脚本，不论在那一层。</p>
-</li>
+<li>我们可以直接测试单个测试脚本，直接执行 mocha add.test.js</li>
+<li>我们也可以测试多个测试脚本，那么我们可以将对应的测试脚本都放到 test 文件夹下面，然后cd 到 test 文件夹后，在控制台执行 mocha test1.js test2.js test3.js</li>
+<li>或者我们在上一级目录，直接执行 mocha ， 它会自动去测试 test 文件下下面的测试脚本（会执行 test 文件下所有能执行的 js 脚本）。但是它只会执行 test 第一级目录下的测试用例，更下层的并不会执行到。</li>
+<li>如果我们想要执行到 <code>test</code> 文件夹更下层的测试脚本，那么我们需要加上 <code>--recursive</code>， 这样就会执行到 <code>test</code> 文件夹下所有的测试脚本，不论在那一层。</li>
 </ol>
 <hr>
 <p>参考文章/引用文章</p>
