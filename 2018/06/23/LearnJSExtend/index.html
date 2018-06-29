@@ -6,19 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://asd2766.github.io/blogs">
-  <title>学习 Mocha 测试框架(一) | 白驹过隙的博客</title>
+  <title>学习JS——继承(一) | 白驹过隙的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Mocha 是什么 Mocha 是一个Javascript的测试框架，我们可以通过它，可以为Javascript应用添加测试，以保证其质量。  如何编写测试用例 Mocha 的作用是运行测试脚本，那么在写完代码之后，我们需要先编写测试脚本。  现在我们有一个 add.js 的脚本 12345function add(a, b) &amp;#123;	return a + b;&amp;#125;module.ex">
+  <meta name="description" content="ES5 继承类型 ES5 中并没有传统的面向对象的概念，所以大家模拟了很多继承的方法，但本质上都是两种的变种：原型链继承，构造继承  父类： 123function Animal() &amp;#123;	this.type = &amp;apos;动物&amp;apos;;&amp;#125; 子类： 123function Cat(name) &amp;#123;	this.name = name;&amp;#125; 原型链继承（这种比较">
 <meta property="og:type" content="article">
-<meta property="og:title" content="学习 Mocha 测试框架(一)">
-<meta property="og:url" content="https://asd2766.github.io/blogs/2018/06/20/learn-mocha-1/index.html">
+<meta property="og:title" content="学习JS——继承(一)">
+<meta property="og:url" content="https://asd2766.github.io/blogs/2018/06/23/LearnJSExtend/index.html">
 <meta property="og:site_name" content="白驹过隙的博客">
-<meta property="og:description" content="Mocha 是什么 Mocha 是一个Javascript的测试框架，我们可以通过它，可以为Javascript应用添加测试，以保证其质量。  如何编写测试用例 Mocha 的作用是运行测试脚本，那么在写完代码之后，我们需要先编写测试脚本。  现在我们有一个 add.js 的脚本 12345function add(a, b) &amp;#123;	return a + b;&amp;#125;module.ex">
+<meta property="og:description" content="ES5 继承类型 ES5 中并没有传统的面向对象的概念，所以大家模拟了很多继承的方法，但本质上都是两种的变种：原型链继承，构造继承  父类： 123function Animal() &amp;#123;	this.type = &amp;apos;动物&amp;apos;;&amp;#125; 子类： 123function Cat(name) &amp;#123;	this.name = name;&amp;#125; 原型链继承（这种比较">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-06-23T06:15:51.168Z">
+<meta property="og:image" content="https://asd2766.github.io/blogs/2018/06/public/img/js%20集成%20dog%20案例.png">
+<meta property="og:updated_time" content="2018-06-29T01:07:57.600Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="学习 Mocha 测试框架(一)">
-<meta name="twitter:description" content="Mocha 是什么 Mocha 是一个Javascript的测试框架，我们可以通过它，可以为Javascript应用添加测试，以保证其质量。  如何编写测试用例 Mocha 的作用是运行测试脚本，那么在写完代码之后，我们需要先编写测试脚本。  现在我们有一个 add.js 的脚本 12345function add(a, b) &amp;#123;	return a + b;&amp;#125;module.ex">
+<meta name="twitter:title" content="学习JS——继承(一)">
+<meta name="twitter:description" content="ES5 继承类型 ES5 中并没有传统的面向对象的概念，所以大家模拟了很多继承的方法，但本质上都是两种的变种：原型链继承，构造继承  父类： 123function Animal() &amp;#123;	this.type = &amp;apos;动物&amp;apos;;&amp;#125; 子类： 123function Cat(name) &amp;#123;	this.name = name;&amp;#125; 原型链继承（这种比较">
+<meta name="twitter:image" content="https://asd2766.github.io/blogs/2018/06/public/img/js%20集成%20dog%20案例.png">
   
   
     <link rel="icon" href="/favicon.png">
@@ -148,60 +150,82 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-learn-mocha-1" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-LearnJSExtend" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      学习 Mocha 测试框架(一)
+      学习JS——继承(一)
     </h1>
   
 
         
-        <a href="/blogs/2018/06/20/learn-mocha-1/" class="archive-article-date">
-  	<time datetime="2018-06-19T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-20</time>
+        <a href="/blogs/2018/06/23/LearnJSExtend/" class="archive-article-date">
+  	<time datetime="2018-06-22T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-23</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Mocha-是什么"><a href="#Mocha-是什么" class="headerlink" title="Mocha 是什么"></a>Mocha 是什么</h2><blockquote>
-<p>Mocha 是一个Javascript的测试框架，我们可以通过它，可以为Javascript应用添加测试，以保证其质量。</p>
+        <h2 id="ES5-继承类型"><a href="#ES5-继承类型" class="headerlink" title="ES5 继承类型"></a>ES5 继承类型</h2><blockquote>
+<p>ES5 中并没有传统的面向对象的概念，所以大家模拟了很多继承的方法，但本质上都是两种的变种：原型链继承，构造继承</p>
 </blockquote>
-<h2 id="如何编写测试用例"><a href="#如何编写测试用例" class="headerlink" title="如何编写测试用例"></a>如何编写测试用例</h2><blockquote>
-<p>Mocha 的作用是运行测试脚本，那么在写完代码之后，我们需要先编写测试脚本。</p>
-</blockquote>
-<p>现在我们有一个 add.js 的脚本</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function add(a, b) &#123;</span><br><span class="line">	return a + b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">module.exports = add;</span><br></pre></td></tr></table></figure>
-<p>我们要测试这个脚本的正确性，就需要针对 add.js 来写一个测试脚本。</p>
+<p>父类：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function Animal() &#123;</span><br><span class="line">	this.type = &apos;动物&apos;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>子类：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function Cat(name) &#123;</span><br><span class="line">	this.name = name;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="原型链继承（这种比较常见）"><a href="#原型链继承（这种比较常见）" class="headerlink" title="原型链继承（这种比较常见）"></a>原型链继承（这种比较常见）</h3><p>现在我们要让 <code>Cat</code> 继承 <code>Animal</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">// 将 Cat 的原型指向 Animal</span><br><span class="line">Cat.prototype = new Animal();</span><br><span class="line"></span><br><span class="line">// 上一句，会将 Cat 的 prototype 完全替换掉，</span><br><span class="line">// 在控制台是打印可以看到， Cat.prototype.constructor 已经指向了 Animal</span><br><span class="line">// 所以我们需要将其给重新指向 Cat, 不然创建的实例都将是指向 Animal的，</span><br><span class="line">// 这样就会导致继承链紊乱（这里不是很懂，紊乱会怎么样，会有什么后果不知道）</span><br><span class="line">Cat.prototype.constructor = Cat;</span><br><span class="line">var cat1 = new Cat(&apos;大橘&apos;);</span><br><span class="line">console.log(cat1.type); // 动物</span><br></pre></td></tr></table></figure>
+<h2 id="构造继承"><a href="#构造继承" class="headerlink" title="构造继承"></a>构造继承</h2><p>构造继承，我们需要在子类中加上 <code>apply</code> 或者 <code>call</code> 方法，将父类的构造函数绑定到子类中。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function Dog(name) &#123;</span><br><span class="line">	Animal.apply(this, arguments);</span><br><span class="line">	this.name = name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var dog1 = new Dog(&apos;旺旺&apos;);</span><br><span class="line">console.log(dog1.name) // 旺旺</span><br><span class="line">console.log(dog1.type) // 动物</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>通常，测试脚本与所要测试的源码脚本同名，但是后缀名为.test.js（表示测试）或者.spec.js（表示规格）。比如，add.js的测试脚本名字就是add.test.js。</p>
+<p>此种继承方式只能继承父构造器中的属性，不能继承父构造器原型上的属性。Animal.apply(this, arguments) 也可用 Animal.call(this) 替换。Dog 对象有两个层级,第一级存放着自有属性以及父构造器中的属性，第二级存放着自己函数原型上的属性(Dog.prototype)。</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var add = require(&apos;add.js&apos;);</span><br><span class="line">var assert = require(&apos;assert&apos;).strict;</span><br><span class="line"></span><br><span class="line">describe(&apos;add.js的测试&apos;, function() &#123;</span><br><span class="line">	it (&apos;1 + 1 应该是等于 2&apos;, function() &#123;</span><br><span class="line">		assert.strictEqual(add(1, 2), 2);</span><br><span class="line">	&#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>add.test.js 是可以独立运行的</p>
-<p>在控制台运行： mocha add.test.js</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">// assert.strictEqual(add(1, 2), 2);</span><br><span class="line">正确情况下输出结果： </span><br><span class="line"></span><br><span class="line">  add的测试</span><br><span class="line">    1) 1 + 1 应该等于2</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  0 passing (13ms)</span><br><span class="line">  1 failing</span><br><span class="line"></span><br><span class="line">// assert.strictEqual(add(1, 2), 3);  </span><br><span class="line">错误情况下输入结果：</span><br><span class="line"></span><br><span class="line"> 1) add的测试</span><br><span class="line">     1 + 1 应该等于2:</span><br><span class="line"></span><br><span class="line">    AssertionError [ERR_ASSERTION]: Input A expected to strictly equal input B:</span><br><span class="line">	+ expected - actual</span><br><span class="line"></span><br><span class="line">	   - 2</span><br><span class="line">	   + 3</span><br><span class="line">    + expected - actual</span><br><span class="line"></span><br><span class="line">      -2</span><br><span class="line">      +3</span><br></pre></td></tr></table></figure>
-<h4 id="现在我们先来回顾下-add-test-js-脚本的代码内容"><a href="#现在我们先来回顾下-add-test-js-脚本的代码内容" class="headerlink" title="现在我们先来回顾下 add.test.js 脚本的代码内容"></a>现在我们先来回顾下 add.test.js 脚本的代码内容</h4><ol>
-<li>在测试脚本中，应该包含1个或者多个 <code>describe</code>，每个 <code>describe</code> 应该包含一个或者多个 <code>it</code>。</li>
-<li><code>describe</code> 表示测试的区域范围，可以理解成是一个 <code>function</code> 或者 <code>class</code>。它是一个函数，第一个参数表示测试的名称，从上面的例子中可以看到我们执行之后，会在控制台上先输出名称以做区分；第二个参数为执行函数，我们需要做的操作都在这个执行函数里面。</li>
-<li><code>it</code> 表示一个测试用例，也是一个函数，第一个参数也是表示名称，第二个参数是实际执行的函数。</li>
-</ol>
-<blockquote>
-<p>我们其实可以在 <code>describe</code> 里面再套 <code>describe</code>，一个 <code>describe</code> 里面也可以添加多个 <code>it</code>    </p>
+<p><img src="../../public/img/js 集成 dog 案例.png" alt="image"></p>
+<h2 id="组合继承"><a href="#组合继承" class="headerlink" title="组合继承"></a>组合继承</h2><p>顾名思义，将构造继承 和 原型链继承 组合到一起使用。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">function Fish(name) &#123;</span><br><span class="line">	Animal.call(this);</span><br><span class="line">	this.name = name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Fish.prototype = new Animal();</span><br><span class="line"></span><br><span class="line">// 新增方法</span><br><span class="line">Fish.prototype.say = function() &#123; </span><br><span class="line">	console.log(&apos;booooooo&apos;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var fish1 = new Fish(&apos;hah&apos;);</span><br><span class="line"></span><br><span class="line">fish1.say(); // booooooo</span><br></pre></td></tr></table></figure>
+<p>内存优化：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">function Fish(name) &#123;</span><br><span class="line">	Animal.call(this);</span><br><span class="line">	this.name = name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">(function() &#123;</span><br><span class="line">	// 创建一个没有实例的类</span><br><span class="line">	var Super = function() &#123;&#125;;</span><br><span class="line">	// 直接继承 prototype</span><br><span class="line">	Super.prototype  = Animal.prototype;</span><br><span class="line">	// 将实例作为子类的原型</span><br><span class="line">	Fish.prototype = new Super();</span><br><span class="line">	// 添加方法</span><br><span class="line">	Fish.prototype.say = function() &#123;</span><br><span class="line">		console.log(&apos;boooooo&apos;);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;)()</span><br></pre></td></tr></table></figure>
+<h2 id="直接继承-Prototype"><a href="#直接继承-Prototype" class="headerlink" title="直接继承 Prototype"></a>直接继承 Prototype</h2><blockquote>
+<p>这个方法是对 原型链继承 的改进，由于Animal 对象中，不变的属性都可以直接写入到<code>Animal.prototype</code>。所以我们可以直接继承 <code>Animal.prototype</code>。</p>
 </blockquote>
-<h2 id="Mocha-基本使用"><a href="#Mocha-基本使用" class="headerlink" title="Mocha 基本使用"></a>Mocha 基本使用</h2><ol>
-<li>我们可以直接测试单个测试脚本，直接执行 mocha add.test.js</li>
-<li>我们也可以测试多个测试脚本，那么我们可以将对应的测试脚本都放到 test 文件夹下面，然后cd 到 test 文件夹后，在控制台执行 mocha test1.js test2.js test3.js</li>
-<li>或者我们在上一级目录，直接执行 mocha ， 它会自动去测试 test 文件下下面的测试脚本（会执行 test 文件下所有能执行的 js 脚本）。但是它只会执行 test 第一级目录下的测试用例，更下层的并不会执行到。</li>
-<li>如果我们想要执行到 <code>test</code> 文件夹更下层的测试脚本，那么我们需要加上 <code>--recursive</code>， 这样就会执行到 <code>test</code> 文件夹下所有的测试脚本，不论在那一层。</li>
-</ol>
-<hr>
-<p>参考文章/引用文章</p>
 <ol>
-<li><a href="http://www.ruanyifeng.com/blog/2015/12/a-mocha-tutorial-of-examples.html" target="_blank" rel="noopener">测试框架 Mocha 实例教程 – 阮一峰</a></li>
+<li>我们需要改写下 Animal</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">function Animal() &#123;&#125;;</span><br><span class="line">Animal.prototype.type = &apos;动物&apos;;</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>将 <code>Panda.prototype</code>  指向 <code>Animal.prototype</code></li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function Panda(name) &#123;</span><br><span class="line">	this.name = name;</span><br><span class="line">&#125;;</span><br><span class="line">Panda.prototype = Animal.prototype;</span><br><span class="line">Panda.prototype.constructor = Panda;</span><br><span class="line">var panda1 = new Panda(&apos;熊熊&apos;);</span><br><span class="line">console.log(panda1.name); // 熊熊</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>总结，该方法比原型链继承要省内存一点，效率要高一点（少创建了一个实例）。<br>但是在这个方法里面 <code>Panda.prototype</code> 和 <code>Animal.prototype</code> 指向了同一个，那么改动 Panda.prototype.constructor 时，同时将 Animal.prototype.constructor 也改掉了，从而影响父构造器创建对象</p>
+</blockquote>
+<h2 id="利用空对象作为中介"><a href="#利用空对象作为中介" class="headerlink" title="利用空对象作为中介"></a>利用空对象作为中介</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">// 中介，中间层</span><br><span class="line">// F是空对象，几乎不占内存</span><br><span class="line">var F = function() &#123;&#125;;</span><br><span class="line">F.prototype = Animal.prototype;</span><br><span class="line"></span><br><span class="line">// 子类</span><br><span class="line">function Panda(name) &#123;</span><br><span class="line">	this.name = name;</span><br><span class="line">&#125;</span><br><span class="line">// 这里 Panda.prototype 就间接的指向了 Animal.prototype</span><br><span class="line">Panda.prototype = new F();</span><br><span class="line">// 这是改动 Panda.prototype.constructor 就不会影响到 Animal.prototype</span><br><span class="line">Panda.prototype.constructor = Panda;</span><br></pre></td></tr></table></figure>
+<p>所以我们可以将其封装成一个函数来进行调用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function extend(subClass, supClass) &#123;</span><br><span class="line">	var F = function() &#123;&#125;;</span><br><span class="line">	F.prototype = supClass.prototype;</span><br><span class="line">	</span><br><span class="line">	subClass = new F();</span><br><span class="line">	subClass.prototype.constructor = subClass;</span><br><span class="line">	// 这里定义个 parent 属性 来指向 supClass.prototype</span><br><span class="line">	// 这样就可以通过 subClass.parent 来调用到父类的属性及方法</span><br><span class="line">	subClass.parent = supClass.prototype;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="拷贝继承"><a href="#拷贝继承" class="headerlink" title="拷贝继承"></a>拷贝继承</h2><blockquote>
+<p>把父类的所有属性和方法，拷贝进子类类实现继承。</p>
+</blockquote>
+<ol>
+<li>将 <code>Animal</code> 的所有不变属性都放到 <code>prototype</code> 上</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">function Animal() &#123;&#125;</span><br><span class="line">Animal.prototype.type = &apos;动物&apos;;</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>再写一个函数来实现拷贝功能</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function copyExtend(sub, sup) &#123;</span><br><span class="line">	var parent = sup.prototype;</span><br><span class="line">	var child = sub.prototype;</span><br><span class="line">	</span><br><span class="line">	for (var key in parent) &#123;</span><br><span class="line">		child[key] = parent[key];</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	child.parent = parent;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>使用</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">copyExtend(Cat, Animal);</span><br><span class="line"></span><br><span class="line">var cat1 = new Cat(&apos;大橘&apos;);</span><br><span class="line">console.log(cat1.name); // 大橘</span><br><span class="line">console.log(cat1.type); // 动物</span><br></pre></td></tr></table></figure>
+<h2 id="最后附上自己的练习"><a href="#最后附上自己的练习" class="headerlink" title="最后附上自己的练习"></a>最后附上自己的练习</h2><p><a href="https://github.com/asd2766/exercise5.git" target="_blank" rel="noopener">https://github.com/asd2766/exercise5.git</a></p>
+<hr>
+<p>参考资料：</p>
+<ol>
+<li><a href="http://www.ruanyifeng.com/blog/2010/05/object-oriented_javascript_inheritance.html" target="_blank" rel="noopener">阮一峰 – Javascript面向对象编程（二）：构造函数的继承</a></li>
 </ol>
 
       
@@ -282,7 +306,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://asd2766.github.io/blogs/2018/06/20/learn-mocha-1/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://asd2766.github.io/blogs/2018/06/23/LearnJSExtend/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -296,18 +320,9 @@
   
 <nav id="article-nav">
   
-    <a href="/blogs/2018/06/23/learn-travis-ci-1/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          学习 Travis CI (一)
-        
-      </div>
-    </a>
   
-  
-    <a href="/blogs/2018/06/20/learn-node-assert/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">初识 Node Assert</div>
+    <a href="/blogs/2018/06/23/learn-karma-1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">学习Karma(一)</div>
       <i class="icon-circle-right"></i>
     </a>
   
