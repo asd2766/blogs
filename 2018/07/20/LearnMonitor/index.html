@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://asd2766.github.io/blogs">
-  <title>学习正则表达式 | 白驹过隙的博客</title>
+  <title>学习前端性能监控 | 白驹过隙的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="概念理解字符 – 原义（正常）文本字符 和 元字符 正则表达式语言由两种基本字符组成：原义（正常）文本字符 和 元字符。  元字符：在正则表达式中具有特殊意义的专用字符，可以用来规定其前导字符（即位于元字符前面的字符）在目标对象中出现模式。比如：+ * ? 量词 量词：分为 贪婪、惰性和支配 这三种   贪婪量词：先看整个字符串是不是一个匹配。如果没有发现匹配，它会去掉字符串中的最后一个字符，再次">
+  <meta name="description" content="为什么要做前端监控 对于公司来说，性能在一定程度上跟利益挂钩。如果你的网站时间很长，那么你就会流失掉很多客户。这对于公司来说是无法容忍的，所以做好前端的性能监控是很重要的。  好处： 解决被动的局面，主动发现潜在问题，及时解决验证修复 验证业务优化方案，积累数据 优化方案的提出和选型，基于生产环境  工具性能常用评估工具：  Page Speed WebPagetest PhantomJS GTm">
 <meta property="og:type" content="article">
-<meta property="og:title" content="学习正则表达式">
-<meta property="og:url" content="https://asd2766.github.io/blogs/2018/06/30/LearnReg/index.html">
+<meta property="og:title" content="学习前端性能监控">
+<meta property="og:url" content="https://asd2766.github.io/blogs/2018/07/20/LearnMonitor/index.html">
 <meta property="og:site_name" content="白驹过隙的博客">
-<meta property="og:description" content="概念理解字符 – 原义（正常）文本字符 和 元字符 正则表达式语言由两种基本字符组成：原义（正常）文本字符 和 元字符。  元字符：在正则表达式中具有特殊意义的专用字符，可以用来规定其前导字符（即位于元字符前面的字符）在目标对象中出现模式。比如：+ * ? 量词 量词：分为 贪婪、惰性和支配 这三种   贪婪量词：先看整个字符串是不是一个匹配。如果没有发现匹配，它会去掉字符串中的最后一个字符，再次">
+<meta property="og:description" content="为什么要做前端监控 对于公司来说，性能在一定程度上跟利益挂钩。如果你的网站时间很长，那么你就会流失掉很多客户。这对于公司来说是无法容忍的，所以做好前端的性能监控是很重要的。  好处： 解决被动的局面，主动发现潜在问题，及时解决验证修复 验证业务优化方案，积累数据 优化方案的提出和选型，基于生产环境  工具性能常用评估工具：  Page Speed WebPagetest PhantomJS GTm">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-07-06T01:38:37.877Z">
+<meta property="og:updated_time" content="2018-07-21T06:07:10.989Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="学习正则表达式">
-<meta name="twitter:description" content="概念理解字符 – 原义（正常）文本字符 和 元字符 正则表达式语言由两种基本字符组成：原义（正常）文本字符 和 元字符。  元字符：在正则表达式中具有特殊意义的专用字符，可以用来规定其前导字符（即位于元字符前面的字符）在目标对象中出现模式。比如：+ * ? 量词 量词：分为 贪婪、惰性和支配 这三种   贪婪量词：先看整个字符串是不是一个匹配。如果没有发现匹配，它会去掉字符串中的最后一个字符，再次">
+<meta name="twitter:title" content="学习前端性能监控">
+<meta name="twitter:description" content="为什么要做前端监控 对于公司来说，性能在一定程度上跟利益挂钩。如果你的网站时间很长，那么你就会流失掉很多客户。这对于公司来说是无法容忍的，所以做好前端的性能监控是很重要的。  好处： 解决被动的局面，主动发现潜在问题，及时解决验证修复 验证业务优化方案，积累数据 优化方案的提出和选型，基于生产环境  工具性能常用评估工具：  Page Speed WebPagetest PhantomJS GTm">
   
   
     <link rel="icon" href="/favicon.png">
@@ -148,161 +148,56 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-LearnReg" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-LearnMonitor" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      学习正则表达式
+      学习前端性能监控
     </h1>
   
 
         
-        <a href="/blogs/2018/06/30/LearnReg/" class="archive-article-date">
-  	<time datetime="2018-06-29T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-30</time>
+        <a href="/blogs/2018/07/20/LearnMonitor/" class="archive-article-date">
+  	<time datetime="2018-07-19T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-20</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="概念理解"><a href="#概念理解" class="headerlink" title="概念理解"></a>概念理解</h2><h3 id="字符-–-原义（正常）文本字符-和-元字符"><a href="#字符-–-原义（正常）文本字符-和-元字符" class="headerlink" title="字符 – 原义（正常）文本字符 和 元字符"></a>字符 – 原义（正常）文本字符 和 元字符</h3><blockquote>
-<p>正则表达式语言由两种基本字符组成：原义（正常）文本字符 和 元字符。</p>
+        <h2 id="为什么要做前端监控"><a href="#为什么要做前端监控" class="headerlink" title="为什么要做前端监控"></a>为什么要做前端监控</h2><blockquote>
+<p>对于公司来说，性能在一定程度上跟利益挂钩。如果你的网站时间很长，那么你就会流失掉很多客户。这对于公司来说是无法容忍的，所以做好前端的性能监控是很重要的。</p>
 </blockquote>
-<p>元字符：在正则表达式中具有特殊意义的专用字符，可以用来规定其前导字符（即位于元字符前面的字符）在目标对象中出现模式。比如：<code>+</code> <code>*</code> <code>?</code></p>
-<h3 id="量词"><a href="#量词" class="headerlink" title="量词"></a>量词</h3><blockquote>
-<p>量词：分为 贪婪、惰性和支配 这三种</p>
-</blockquote>
-<ol>
-<li>贪婪量词：先看整个字符串是不是一个匹配。如果没有发现匹配，它会去掉字符串中的最后一个字符，再次进行匹配。</li>
-<li>惰性量词：先看整个字符串中的第一个字母是不是一个匹配。如果单独一个字母不够，会再匹配下一个字母，组成一个新的字符串进行匹配，如果还不够就再读取下一个字符，直到完成匹配或者匹配失败。</li>
-<li>支配量词：只尝试匹配整个字符。如果整个字符都不匹配，不做下一步尝试。</li>
+<h4 id="好处："><a href="#好处：" class="headerlink" title="好处："></a>好处：</h4><ol>
+<li>解决被动的局面，主动发现潜在问题，及时解决验证修复</li>
+<li>验证业务优化方案，积累数据</li>
+<li>优化方案的提出和选型，基于生产环境</li>
 </ol>
-<table>
-<thead>
-<tr>
-<th>贪婪</th>
-<th style="text-align:right">惰性</th>
-<th style="text-align:right">支配</th>
-<th style="text-align:center">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>?</td>
-<td style="text-align:right">??</td>
-<td style="text-align:right">?+</td>
-<td style="text-align:center">可以出现0次或1次，但至多出现1次</td>
-</tr>
-<tr>
-<td>*</td>
-<td style="text-align:right">*?</td>
-<td style="text-align:right">*+</td>
-<td style="text-align:center">可以出现任意次，也可以不出现</td>
-</tr>
-<tr>
-<td>+</td>
-<td style="text-align:right">+?</td>
-<td style="text-align:right">++</td>
-<td style="text-align:center">出现1次或多次，但至少出现1次</td>
-</tr>
-<tr>
-<td>{n}</td>
-<td style="text-align:right">{n}?</td>
-<td style="text-align:right">{n}+</td>
-<td style="text-align:center">一定出现n次</td>
-</tr>
-<tr>
-<td>{n,m}</td>
-<td style="text-align:right">{n,m}?</td>
-<td style="text-align:right">{n,m}+</td>
-<td style="text-align:center">至少出现n次，但至多不能超过m次</td>
-</tr>
-<tr>
-<td>{n,}</td>
-<td style="text-align:right">{n,}?</td>
-<td style="text-align:right">{n,}+</td>
-<td style="text-align:center">可以出现任意次，但至少出现n次</td>
-</tr>
-</tbody>
-</table>
-<h3 id="分组和引用"><a href="#分组和引用" class="headerlink" title="分组和引用"></a>分组和引用</h3><blockquote>
-<p>分组：捕获匹配的子字符串。使用 () 的捕获根据左括号的顺序从 1 开始自动编号。捕获元素编号为零的第一个捕获是由整个正则表达式模式匹配的文本。</p>
-</blockquote>
-<p>比如：(\d{1,3}.){3}\d{1,3}是一个简单的IP地址匹配表达式。要理解这个表达式，请按下列顺序分析它：\d{1,3}匹配1到3位的数字，(\d{1,3}.){3}匹配三位数字加上一个英文句号(这个整体也就是这个分组)重复3次，最后再加上一个一到三位的数字(\d{1,3})。</p>
-<blockquote>
-<p>引用：\n 与第n个分组第一次匹配的字符相匹配 （组是圆括号内的表达式，n是从左到右的左括号数）</p>
-</blockquote>
-<p>比如：匹配单双引号包裹的字符（包括单双引号）([“‘])[a-zA-Z0-9]+\1</p>
-<h3 id="零宽断言"><a href="#零宽断言" class="headerlink" title="零宽断言"></a>零宽断言</h3><blockquote>
-<p>零宽断言是一种零宽度的匹配，它匹配的内容不会保存到匹配结果中，也不会占用index宽度，最终匹配的结果只是一个位置，简单的说，它用于查找在某些内容之前或之后的东西(但返回结果并不包括这些内容)</p>
-</blockquote>
-<p>JavaScript中只支持零宽先行断言</p>
-<p>零宽断言分为4中，但是 <code>javascript</code> 只支持 <code>零宽先行断言</code>,（即只支持<code>?=exp</code>和<code>?!exp</code>）</p>
+<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><p>性能常用评估工具：</p>
 <ol>
-<li><p>正向零宽先行断言（?=exp）</p>
-<p> 目标字符出现的位置的右边必须匹配到exp这个表达式</p>
-</li>
-<li><p>负向零宽先行断言（?!exp）</p>
-<p> 目标字符出现的位置的右边不能匹配到exp这个表达式</p>
-</li>
-<li><p>正向零宽后发断言（?&lt;=exp）</p>
-<p> 目标字符出现的位置的左边必须匹配到exp这个表达式</p>
-</li>
-<li><p>负向零宽后发断言（?&lt;!exp）</p>
-<p> 目标字符出现的位置的左边不能匹配到exp这个表达式</p>
-</li>
+<li>Page Speed</li>
+<li>WebPagetest</li>
+<li>PhantomJS</li>
+<li>GTmetrix</li>
 </ol>
-<h4 id="正向零宽先行断言（-exp）"><a href="#正向零宽先行断言（-exp）" class="headerlink" title="正向零宽先行断言（?=exp）"></a>正向零宽先行断言（?=exp）</h4><blockquote>
-<p>示例一</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var str = &apos;abcc12abcc123&apos;;</span><br><span class="line">var reg = /ab(?=cc)/;</span><br><span class="line">str.match(reg); // [&quot;ab&quot;, index: 0, input: &quot;abcc12abcc123&quot;, groups: undefined]</span><br></pre></td></tr></table></figure>
+<p>错误上报工具、埋点上报：</p>
 <ol>
-<li>index=0，a 匹配 a 成功，继续匹配第二个字母 b，匹配 b 成功</li>
-<li>继续尝试匹配，(?=cc) 匹配到 ab 后面紧跟的 cc，匹配成功，返回成功结果 ab</li>
+<li>badjs: 脚本错误上报</li>
+<li>monitor: 一切可以用累积量表示的上报（PV/接口成功或失败/是否支持webscoket/…）</li>
+<li>huoto: 测速上报</li>
+<li>tdbank: 用户行为上报</li>
+<li>PerformanceTiming: 性能监控上报</li>
+<li>各种统计工具（百度，Google Analytics，MTA等）</li>
 </ol>
-<blockquote>
-<p>示例二</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var str = &apos;abcdefg&apos;;</span><br><span class="line">var reg = /(?=cd)efg/;</span><br><span class="line">str.match(reg); // null</span><br></pre></td></tr></table></figure>
-<p>想要达到匹配效果，即获得 cd 后方的 efg，这个是<code>零宽后发断言</code>，但是 js 里面不支持，所以此时使用的是<code>先行断言</code>。</p>
+<hr>
+<p>参考资料：</p>
 <ol>
-<li>?=cd 开始匹配，匹配到 <code>index=2</code> 的时候成功，即匹配到了 c 的位置。匹配成功之后，开始匹配 e。</li>
-<li>因为 <code>?=cd</code> 是零宽断言，不占匹配位置，所以匹配成功之后，下一轮匹配还是从 <code>index=2</code> 开始匹配，即 c 的位置，这个时候开始匹配 e， c != e，匹配失败。</li>
-<li>index = 3 开始匹配 f，匹配失败，下一轮匹配还是失败，所以返回 <code>null</code>。</li>
-<li>想要匹配成功，reg需要改成 <code>/(?=cd)cdefg/</code>。</li>
-</ol>
-<blockquote>
-<p>实例三</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var str = &apos;abcdefg&apos;;</span><br><span class="line">var reg = /ab(?=cd)cdefg/;</span><br><span class="line">str.match(reg); // [&apos;abcdefg&apos;, index: 0, input: &apos;abcdefg&apos;]</span><br></pre></td></tr></table></figure>
-<ol>
-<li>先匹配 <code>ab</code>，匹配成功之后，<code>(?=cd)</code> 开始匹配，<code>ab</code> 后面紧跟着 <code>cd</code>，所以匹配成功</li>
-<li>因为 <code>(?=cd)</code> 不占匹配位置，下一次的匹配还是从 <code>c</code> 开始，开始匹配 <code>cdefg</code></li>
-<li>匹配成功，返回结果 <code>abcdefg</code></li>
-</ol>
-<blockquote>
-<p>零宽断言返回的是位置而不是字符，零宽断言匹配成功后，其余表达式会基于这个返回的位置继续判断</p>
-</blockquote>
-<h4 id="负向零宽先行断言（-exp）"><a href="#负向零宽先行断言（-exp）" class="headerlink" title="负向零宽先行断言（?!exp）"></a>负向零宽先行断言（?!exp）</h4><font color="#ff494e" size="3" face="黑体"><br>    <code>ab(?!cd)</code> 表示匹配’ab’仅仅当’ab’后面不跟着’cd’<br></font>
-
-<blockquote>
-<p>示例一</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var str = &apos;abcdefg&apos;;</span><br><span class="line">var reg = /ab(?!cd)/; // 匹配&apos;ab&apos;仅仅当&apos;ab&apos;后面不跟着&apos;cd&apos;,</span><br><span class="line">str.match(reg); // null</span><br></pre></td></tr></table></figure>
-<ol>
-<li>首先匹配 <code>ab</code>，匹配成功之后，<code>cd</code> 开始匹配 <code>(?!cd)</code>，我们需要匹配的是 <code>ab</code> 后面不紧跟着 <code>cd</code>，根据 <code>str</code> 我们可以看到 <code>ab</code> 后面紧跟着 <code>cd</code>，所以匹配失败</li>
-<li>所以返回了 <code>null</code></li>
-</ol>
-<blockquote>
-<p>示例二</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var str = &apos;abcdefg&apos;;</span><br><span class="line">var reg = /ab(?!ab)cd/; // 匹配&apos;ab&apos;仅仅当&apos;ab&apos;后面不跟着&apos;cd&apos;,</span><br><span class="line">str.match(reg); // [&quot;abcd&quot;, index: 0, input: &quot;abcdefg&quot;]</span><br></pre></td></tr></table></figure>
-<ol>
-<li>首先匹配 <code>ab</code>，匹配成功之后，<code>cd</code> 开始匹配 <code>(?!ab)</code>，匹配成功。因为 <code>ab</code> 后面紧跟着的是 <code>cd</code> 而不是 <code>ab</code>，所以匹配成功。</li>
-<li>(?!ab) 匹配成功之后，因为是零宽断言，所以还是在 <code>cd</code> 的位置开始匹配 <code>cd</code>，匹配成功，返回结果</li>
+<li><a href="http://fex.baidu.com/blog/2014/05/build-performance-monitor-in-7-days/" target="_blank" rel="noopener">7 天打造前端性能监控系统</a></li>
+<li><a href="https://mp.weixin.qq.com/s/YiKRY_LDURY0uONtEhkUfg" target="_blank" rel="noopener">大前端时代前端监控的最佳实践</a></li>
+<li><a href="https://cloud.tencent.com/developer/article/1004564" target="_blank" rel="noopener">腾讯云Badjs镜像使用入门</a></li>
 </ol>
 
       
@@ -383,7 +278,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://asd2766.github.io/blogs/2018/06/30/LearnReg/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://asd2766.github.io/blogs/2018/07/20/LearnMonitor/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -397,18 +292,9 @@
   
 <nav id="article-nav">
   
-    <a href="/blogs/2018/07/10/LearnErrorHandler/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          学习错误捕捉（一）
-        
-      </div>
-    </a>
   
-  
-    <a href="/blogs/2018/06/29/LearnJSExtend/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">学习JS——继承(一)</div>
+    <a href="/blogs/2018/07/10/LearnErrorHandler/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">学习错误捕捉（一）</div>
       <i class="icon-circle-right"></i>
     </a>
   
