@@ -759,74 +759,6 @@
 
 
   
-    <article id="post-learn-travis-ci-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blogs/2018/06/23/learn-travis-ci-1/">学习 Travis CI (一)</a>
-    </h1>
-  
-
-        
-        <a href="/blogs/2018/06/23/learn-travis-ci-1/" class="archive-article-date">
-  	<time datetime="2018-06-22T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="什么是-Travis-CI"><a href="#什么是-Travis-CI" class="headerlink" title="什么是 Travis CI"></a>什么是 Travis CI</h2><hr>
-<p>参考资料：</p>
-<ol>
-<li><a href="http://www.ruanyifeng.com/blog/2017/12/travis_ci_tutorial.html" target="_blank" rel="noopener">阮一峰 持续集成服务 Travis CI 教程</a></li>
-<li><a href="https://www.travis-ci.org/" target="_blank" rel="noopener">Travis CI 官方教程</a></li>
-</ol>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/blogs/2018/06/23/learn-travis-ci-1/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-learn-mocha-2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -895,51 +827,31 @@
 
 
   
-    <article id="post-learn-node-assert" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-learn-travis-ci-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/blogs/2018/06/20/learn-node-assert/">初识 Node Assert</a>
+      <a class="article-title" href="/blogs/2018/06/23/learn-travis-ci-1/">学习 Travis CI (一)</a>
     </h1>
   
 
         
-        <a href="/blogs/2018/06/20/learn-node-assert/" class="archive-article-date">
-  	<time datetime="2018-06-19T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-20</time>
+        <a href="/blogs/2018/06/23/learn-travis-ci-1/" class="archive-article-date">
+  	<time datetime="2018-06-22T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-23</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="Assert的作用"><a href="#Assert的作用" class="headerlink" title="Assert的作用"></a>Assert的作用</h3><hr>
-<blockquote>
-<p>assert是 node 里面内中的一个对象, 主要是针对项目进行测试, 如果运行结果跟预期不同, 则会抛出异常.</p>
-<p>node版本为 10.4.1</p>
-</blockquote>
+        <h2 id="什么是-Travis-CI"><a href="#什么是-Travis-CI" class="headerlink" title="什么是 Travis CI"></a>什么是 Travis CI</h2><hr>
+<p>参考资料：</p>
 <ol>
-<li><p>assert(value, [,message]) === assert.ok(value, []),两个方法是一样的</p>
-<blockquote>
-<p>value: 需要检验的值, 判断是否为true<br>message: 抛出异常时的提示信息</p>
-</blockquote>
-</li>
-<li><p>assert.deepStrictEqual(actual, expected[, message])</p>
-<blockquote>
-<p>测试 actual 与 expected 深度是否相同, 深度相等意味着子对象中可枚举的自身属性也会按以下规则递归地比较。 </p>
-<p>比较的详细说法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; 1. [原始值][1]运用 SameValue比较法进行比较，使用 Object.is() 函数。</span><br><span class="line">&gt; 2. 对象的类型标签应该相同。</span><br><span class="line">&gt; 3. 对象的原型使用全等运算符比较。</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
-</blockquote>
-<p> 例子:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> assert = <span class="built_in">require</span>(<span class="string">'assert'</span>).strict;</span><br><span class="line"></span><br><span class="line">assert.deepStrictEqual(&#123; <span class="attr">a</span>: <span class="number">1</span> &#125;, &#123; <span class="attr">a</span>: <span class="string">'1'</span> &#125;);</span><br><span class="line"><span class="comment">// 运行上述代码会跑出一个异常, 因为 1 === '1' 是 false</span></span><br><span class="line"><span class="comment">// throw new errors.AssertionError(&#123;</span></span><br><span class="line"><span class="comment">// AssertionError [ERR_ASSERTION]: Input A expected to strictly deep-equal input B:</span></span><br><span class="line"><span class="comment">// + expected - actual</span></span><br><span class="line"> 	<span class="comment">// &#123;</span></span><br><span class="line"><span class="comment">// -   a: 1</span></span><br><span class="line"><span class="comment">// +   a: '1'</span></span><br><span class="line">	<span class="comment">// &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 以下对象没有自身属性。</span></span><br><span class="line"><span class="keyword">const</span> date = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"><span class="keyword">const</span> object = &#123;&#125;;</span><br><span class="line"><span class="keyword">const</span> fakeDate = &#123;&#125;;</span><br><span class="line"><span class="built_in">Object</span>.setPrototypeOf(fakeDate, <span class="built_in">Date</span>.prototype);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 原型不同：</span></span><br><span class="line">assert.deepStrictEqual(object, fakeDate);</span><br><span class="line"><span class="comment">// 报错</span></span><br><span class="line"><span class="comment">// AssertionError [ERR_ASSERTION]: Input A expected to strictly deep-equal input B:</span></span><br><span class="line"><span class="comment">// + expected - actual</span></span><br><span class="line"><span class="comment">// - &#123;&#125;</span></span><br><span class="line"><span class="comment">// + Date &#123;&#125;</span></span><br><span class="line"><span class="comment">// 因为两者原型不同, 不是严格相等</span></span><br><span class="line"><span class="comment">// 如果将 Object.setPrototypeOf(fakeDate, Date.prototype); 这句删除, 那么两个是相等的</span></span><br><span class="line"></span><br><span class="line">assert.deepStrictEqual(<span class="literal">NaN</span>, <span class="literal">NaN</span>);</span><br><span class="line"><span class="comment">// 通过，因为使用的是 SameValue 比较法。对应详细说明的1</span></span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<hr>
-<p>参考资料:</p>
-<ol>
-<li><a href="http://nodejs.cn/api/assert.html#assert_assert_value_message" target="_blank" rel="noopener">http://nodejs.cn/api/assert.html#assert_assert_value_message</a></li>
+<li><a href="http://www.ruanyifeng.com/blog/2017/12/travis_ci_tutorial.html" target="_blank" rel="noopener">阮一峰 持续集成服务 Travis CI 教程</a></li>
+<li><a href="https://www.travis-ci.org/" target="_blank" rel="noopener">Travis CI 官方教程</a></li>
 </ol>
 
       
@@ -953,7 +865,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/blogs/2018/06/20/learn-node-assert/">展开全文 >></a>
+          <a class="article-more-a" href="/blogs/2018/06/23/learn-travis-ci-1/">展开全文 >></a>
         </p>
       
 
@@ -1051,6 +963,94 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/blogs/2018/06/20/learn-mocha-1/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-learn-node-assert" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blogs/2018/06/20/learn-node-assert/">初识 Node Assert</a>
+    </h1>
+  
+
+        
+        <a href="/blogs/2018/06/20/learn-node-assert/" class="archive-article-date">
+  	<time datetime="2018-06-19T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Assert的作用"><a href="#Assert的作用" class="headerlink" title="Assert的作用"></a>Assert的作用</h3><hr>
+<blockquote>
+<p>assert是 node 里面内中的一个对象, 主要是针对项目进行测试, 如果运行结果跟预期不同, 则会抛出异常.</p>
+<p>node版本为 10.4.1</p>
+</blockquote>
+<ol>
+<li><p>assert(value, [,message]) === assert.ok(value, []),两个方法是一样的</p>
+<blockquote>
+<p>value: 需要检验的值, 判断是否为true<br>message: 抛出异常时的提示信息</p>
+</blockquote>
+</li>
+<li><p>assert.deepStrictEqual(actual, expected[, message])</p>
+<blockquote>
+<p>测试 actual 与 expected 深度是否相同, 深度相等意味着子对象中可枚举的自身属性也会按以下规则递归地比较。 </p>
+<p>比较的详细说法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; 1. [原始值][1]运用 SameValue比较法进行比较，使用 Object.is() 函数。</span><br><span class="line">&gt; 2. 对象的类型标签应该相同。</span><br><span class="line">&gt; 3. 对象的原型使用全等运算符比较。</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p> 例子:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> assert = <span class="built_in">require</span>(<span class="string">'assert'</span>).strict;</span><br><span class="line"></span><br><span class="line">assert.deepStrictEqual(&#123; <span class="attr">a</span>: <span class="number">1</span> &#125;, &#123; <span class="attr">a</span>: <span class="string">'1'</span> &#125;);</span><br><span class="line"><span class="comment">// 运行上述代码会跑出一个异常, 因为 1 === '1' 是 false</span></span><br><span class="line"><span class="comment">// throw new errors.AssertionError(&#123;</span></span><br><span class="line"><span class="comment">// AssertionError [ERR_ASSERTION]: Input A expected to strictly deep-equal input B:</span></span><br><span class="line"><span class="comment">// + expected - actual</span></span><br><span class="line"> 	<span class="comment">// &#123;</span></span><br><span class="line"><span class="comment">// -   a: 1</span></span><br><span class="line"><span class="comment">// +   a: '1'</span></span><br><span class="line">	<span class="comment">// &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 以下对象没有自身属性。</span></span><br><span class="line"><span class="keyword">const</span> date = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"><span class="keyword">const</span> object = &#123;&#125;;</span><br><span class="line"><span class="keyword">const</span> fakeDate = &#123;&#125;;</span><br><span class="line"><span class="built_in">Object</span>.setPrototypeOf(fakeDate, <span class="built_in">Date</span>.prototype);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 原型不同：</span></span><br><span class="line">assert.deepStrictEqual(object, fakeDate);</span><br><span class="line"><span class="comment">// 报错</span></span><br><span class="line"><span class="comment">// AssertionError [ERR_ASSERTION]: Input A expected to strictly deep-equal input B:</span></span><br><span class="line"><span class="comment">// + expected - actual</span></span><br><span class="line"><span class="comment">// - &#123;&#125;</span></span><br><span class="line"><span class="comment">// + Date &#123;&#125;</span></span><br><span class="line"><span class="comment">// 因为两者原型不同, 不是严格相等</span></span><br><span class="line"><span class="comment">// 如果将 Object.setPrototypeOf(fakeDate, Date.prototype); 这句删除, 那么两个是相等的</span></span><br><span class="line"></span><br><span class="line">assert.deepStrictEqual(<span class="literal">NaN</span>, <span class="literal">NaN</span>);</span><br><span class="line"><span class="comment">// 通过，因为使用的是 SameValue 比较法。对应详细说明的1</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<hr>
+<p>参考资料:</p>
+<ol>
+<li><a href="http://nodejs.cn/api/assert.html#assert_assert_value_message" target="_blank" rel="noopener">http://nodejs.cn/api/assert.html#assert_assert_value_message</a></li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/blogs/2018/06/20/learn-node-assert/">展开全文 >></a>
         </p>
       
 
