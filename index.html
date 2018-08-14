@@ -149,6 +149,127 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-LearnWebPerformance2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blogs/2018/08/06/LearnWebPerformance2/">学习前端性能（二）</a>
+    </h1>
+  
+
+        
+        <a href="/blogs/2018/08/06/LearnWebPerformance2/" class="archive-article-date">
+  	<time datetime="2018-08-05T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="建议使用CDN"><a href="#建议使用CDN" class="headerlink" title="建议使用CDN"></a>建议使用CDN</h2><p>为什么说建议使用<code>cdn</code>呢？</p>
+<ol>
+<li><code>CDN</code> 可不带cookie，减少http请求头的代销</li>
+<li>分担主域的压力，分流</li>
+<li>不容易被<code>DOS</code>攻击</li>
+<li>安全，静态资源可存放<code>CDN</code></li>
+</ol>
+<p>性能优化步骤：</p>
+<ol>
+<li>分析网站性能</li>
+<li>根据分析的数据进行对应的调整</li>
+</ol>
+<h2 id="JIT-just-in-time"><a href="#JIT-just-in-time" class="headerlink" title="JIT (just in time)"></a>JIT (just in time)</h2><h4 id="编译方式："><a href="#编译方式：" class="headerlink" title="编译方式："></a>编译方式：</h4><ol>
+<li>解释器：边解释边翻译，执行时进行翻译</li>
+<li>编译器：先把源码编译成对应目标代码，执行时就可不用再次翻译，可以直接运行</li>
+</ol>
+<h4 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h4><ol>
+<li>解释器：启动执行快，所以最开始的浏览器都是采用 JavaScript 解释器，但是如果执行一个for循环时，解释器需要一遍又一遍的进行翻译，导致效率低下。</li>
+<li>编译器：与解释器刚好相反，另外一个不同是，编译器可以用更多的时间对代码进行优化，以使的代码执行的更快。而解释器是在 runtime 时进行这一步骤的，这就决定了它不可能在翻译的时候用很多时间进行优化。</li>
+</ol>
+<h4 id="Just-in-time-编译器（混合模式）：综合两者优点"><a href="#Just-in-time-编译器（混合模式）：综合两者优点" class="headerlink" title="Just-in-time 编译器（混合模式）：综合两者优点"></a>Just-in-time 编译器（混合模式）：综合两者优点</h4><blockquote>
+<p>起初，浏览器监视所有通过解释器的代码，如果同一行代码执行了几次，将其标记为<code>warn</code>，如果同一行代码执行了很多次，就会将其标记为<code>hot</code>。</p>
+<p>如果一段代码变为了<code>warn</code>，那么 JIT 就会将其送到编译器进行编译，并且把编译结果存储起来。下次如果执行到同样的代码的时候就会直接运行编译的结果。</p>
+<p>如果一段代码变为 <code>very hot</code>，那么 JIT 就会将其送到优化编译器进行编译，生成一个更高效的代码版本并存储。</p>
+</blockquote>
+<h2 id="节流和防抖-throttle-debounce"><a href="#节流和防抖-throttle-debounce" class="headerlink" title="节流和防抖(throttle/debounce)"></a>节流和防抖(throttle/debounce)</h2><p><strong>用电梯超时来举例子</strong></p>
+<ol>
+<li>throttle：保证电梯第一个人进来以后，15秒后准时运行一次，不等待。如果没人就待机。</li>
+<li>debounce：如果电梯里有人进来，等待15秒，如果又有人进来，重新等待15秒，直到15秒超时，开始运送。</li>
+</ol>
+<p><strong>使用示例</strong></p>
+<ol>
+<li>_.throttle</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function log() &#123;</span><br><span class="line">	console.log($(window).scrollTop(), event.timeStamp);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 控制台记录窗口滚动事件，触发频率比你想象要快</span><br><span class="line">$(window).scroll(log);</span><br><span class="line"></span><br><span class="line">// 控制台记录窗口滚动事件，250ms最多触发一次</span><br><span class="line">$(window).scroll(_.throttle(log, 250));</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>_.debounce</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function ajax_lookup(event) &#123;</span><br><span class="line">	// 对输入的内容进行ajax查询</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 字符输入的频率比你预想的要快，Ajax来不及回复</span><br><span class="line">$(&apos;input:text&apos;).keyup(ajax_lookup);</span><br><span class="line"></span><br><span class="line">// 当用户停顿 250ms 后才开始查询</span><br><span class="line">$(&apos;input:text&apos;).keyup(_.debounce(ajax_lookup, 250));</span><br></pre></td></tr></table></figure>
+<p><strong>使用场景</strong></p>
+<p>只要牵涉到连续事件或频率控制相关的应用都可以考虑到这两个函数，比如：</p>
+<ol>
+<li>游戏射击，keydown 事件</li>
+<li>文本输入、自动完成，keyup 事件</li>
+<li>鼠标移动，mousemove 事件</li>
+<li>DOM 元素动态定位，window 对象的 resize 和 scroll 事件</li>
+</ol>
+<p>前两者 debounce 和 throttle 都可以按需使用；后两者肯定是用 throttle 了。如果不做过滤处理，每秒种甚至会触发数十次相应的事件。尤其是 mousemove 事件，每移动一像素都可能触发一次事件。如果是在一个画布上做一个鼠标相关的应用，过滤事件处理是必须的，否则肯定会造成糟糕的体验。</p>
+<h2 id="FCP-和-DCL"><a href="#FCP-和-DCL" class="headerlink" title="FCP 和 DCL"></a>FCP 和 DCL</h2><p>FCP: First Page Content</p>
+<p>DCL: DOM Content Loaded</p>
+<p>当用户进入网站，得到视觉效果时开始测量 FCP，当载入 HTML 文档时开始测量 DCL</p>
+<hr>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://developers.google.cn/web/fundamentals/performance/why-performance-matters/" target="_blank" rel="noopener">https://developers.google.cn/web/fundamentals/performance/why-performance-matters/</a></li>
+<li><a href="https://hacks.mozilla.org/2017/02/a-crash-course-in-just-in-time-jit-compilers/" target="_blank" rel="noopener">Just-in-time</a></li>
+<li><a href="https://blog.coding.net/blog/the-difference-between-throttle-and-debounce-in-underscorejs" target="_blank" rel="noopener">浅谈 Underscore.js 中 _.throttle 和 _.debounce 的差异</a></li>
+<li><a href="https://www.linkedin.com/pulse/why-does-page-speed-insights-use-fcp-dcl-priyanka-khanna-1" target="_blank" rel="noopener">Why does Page Speed Insights use FCP and DCL?</a></li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/blogs/2018/08/06/LearnWebPerformance2/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-LearnWebPerformance" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -885,6 +1006,74 @@
 
 
   
+    <article id="post-learn-travis-ci-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blogs/2018/06/23/learn-travis-ci-1/">学习 Travis CI (一)</a>
+    </h1>
+  
+
+        
+        <a href="/blogs/2018/06/23/learn-travis-ci-1/" class="archive-article-date">
+  	<time datetime="2018-06-22T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="什么是-Travis-CI"><a href="#什么是-Travis-CI" class="headerlink" title="什么是 Travis CI"></a>什么是 Travis CI</h2><hr>
+<p>参考资料：</p>
+<ol>
+<li><a href="http://www.ruanyifeng.com/blog/2017/12/travis_ci_tutorial.html" target="_blank" rel="noopener">阮一峰 持续集成服务 Travis CI 教程</a></li>
+<li><a href="https://www.travis-ci.org/" target="_blank" rel="noopener">Travis CI 官方教程</a></li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/blogs/2018/06/23/learn-travis-ci-1/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-learn-karma-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -984,74 +1173,6 @@
 
 
   
-    <article id="post-learn-travis-ci-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blogs/2018/06/23/learn-travis-ci-1/">学习 Travis CI (一)</a>
-    </h1>
-  
-
-        
-        <a href="/blogs/2018/06/23/learn-travis-ci-1/" class="archive-article-date">
-  	<time datetime="2018-06-22T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="什么是-Travis-CI"><a href="#什么是-Travis-CI" class="headerlink" title="什么是 Travis CI"></a>什么是 Travis CI</h2><hr>
-<p>参考资料：</p>
-<ol>
-<li><a href="http://www.ruanyifeng.com/blog/2017/12/travis_ci_tutorial.html" target="_blank" rel="noopener">阮一峰 持续集成服务 Travis CI 教程</a></li>
-<li><a href="https://www.travis-ci.org/" target="_blank" rel="noopener">Travis CI 官方教程</a></li>
-</ol>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/blogs/2018/06/23/learn-travis-ci-1/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-learn-mocha-2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1091,103 +1212,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/blogs/2018/06/23/learn-mocha-2/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-learn-mocha-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blogs/2018/06/20/learn-mocha-1/">学习 Mocha 测试框架(一)</a>
-    </h1>
-  
-
-        
-        <a href="/blogs/2018/06/20/learn-mocha-1/" class="archive-article-date">
-  	<time datetime="2018-06-19T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Mocha-是什么"><a href="#Mocha-是什么" class="headerlink" title="Mocha 是什么"></a>Mocha 是什么</h2><blockquote>
-<p>Mocha 是一个Javascript的测试框架，我们可以通过它，可以为Javascript应用添加测试，以保证其质量。</p>
-</blockquote>
-<h2 id="如何编写测试用例"><a href="#如何编写测试用例" class="headerlink" title="如何编写测试用例"></a>如何编写测试用例</h2><blockquote>
-<p>Mocha 的作用是运行测试脚本，那么在写完代码之后，我们需要先编写测试脚本。</p>
-</blockquote>
-<p>现在我们有一个 add.js 的脚本</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function add(a, b) &#123;</span><br><span class="line">	return a + b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">module.exports = add;</span><br></pre></td></tr></table></figure>
-<p>我们要测试这个脚本的正确性，就需要针对 add.js 来写一个测试脚本。</p>
-<blockquote>
-<p>通常，测试脚本与所要测试的源码脚本同名，但是后缀名为.test.js（表示测试）或者.spec.js（表示规格）。比如，add.js的测试脚本名字就是add.test.js。</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var add = require(&apos;add.js&apos;);</span><br><span class="line">var assert = require(&apos;assert&apos;).strict;</span><br><span class="line"></span><br><span class="line">describe(&apos;add.js的测试&apos;, function() &#123;</span><br><span class="line">	it (&apos;1 + 1 应该是等于 2&apos;, function() &#123;</span><br><span class="line">		assert.strictEqual(add(1, 2), 2);</span><br><span class="line">	&#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>add.test.js 是可以独立运行的</p>
-<p>在控制台运行： mocha add.test.js</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">// assert.strictEqual(add(1, 2), 2);</span><br><span class="line">正确情况下输出结果： </span><br><span class="line"></span><br><span class="line">  add的测试</span><br><span class="line">    1) 1 + 1 应该等于2</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  0 passing (13ms)</span><br><span class="line">  1 failing</span><br><span class="line"></span><br><span class="line">// assert.strictEqual(add(1, 2), 3);  </span><br><span class="line">错误情况下输入结果：</span><br><span class="line"></span><br><span class="line"> 1) add的测试</span><br><span class="line">     1 + 1 应该等于2:</span><br><span class="line"></span><br><span class="line">    AssertionError [ERR_ASSERTION]: Input A expected to strictly equal input B:</span><br><span class="line">	+ expected - actual</span><br><span class="line"></span><br><span class="line">	   - 2</span><br><span class="line">	   + 3</span><br><span class="line">    + expected - actual</span><br><span class="line"></span><br><span class="line">      -2</span><br><span class="line">      +3</span><br></pre></td></tr></table></figure>
-<h4 id="现在我们先来回顾下-add-test-js-脚本的代码内容"><a href="#现在我们先来回顾下-add-test-js-脚本的代码内容" class="headerlink" title="现在我们先来回顾下 add.test.js 脚本的代码内容"></a>现在我们先来回顾下 add.test.js 脚本的代码内容</h4><ol>
-<li>在测试脚本中，应该包含1个或者多个 <code>describe</code>，每个 <code>describe</code> 应该包含一个或者多个 <code>it</code>。</li>
-<li><code>describe</code> 表示测试的区域范围，可以理解成是一个 <code>function</code> 或者 <code>class</code>。它是一个函数，第一个参数表示测试的名称，从上面的例子中可以看到我们执行之后，会在控制台上先输出名称以做区分；第二个参数为执行函数，我们需要做的操作都在这个执行函数里面。</li>
-<li><code>it</code> 表示一个测试用例，也是一个函数，第一个参数也是表示名称，第二个参数是实际执行的函数。</li>
-</ol>
-<blockquote>
-<p>我们其实可以在 <code>describe</code> 里面再套 <code>describe</code>，一个 <code>describe</code> 里面也可以添加多个 <code>it</code>    </p>
-</blockquote>
-<h2 id="Mocha-基本使用"><a href="#Mocha-基本使用" class="headerlink" title="Mocha 基本使用"></a>Mocha 基本使用</h2><ol>
-<li>我们可以直接测试单个测试脚本，直接执行 mocha add.test.js</li>
-<li>我们也可以测试多个测试脚本，那么我们可以将对应的测试脚本都放到 test 文件夹下面，然后cd 到 test 文件夹后，在控制台执行 mocha test1.js test2.js test3.js</li>
-<li>或者我们在上一级目录，直接执行 mocha ， 它会自动去测试 test 文件下下面的测试脚本（会执行 test 文件下所有能执行的 js 脚本）。但是它只会执行 test 第一级目录下的测试用例，更下层的并不会执行到。</li>
-<li>如果我们想要执行到 <code>test</code> 文件夹更下层的测试脚本，那么我们需要加上 <code>--recursive</code>， 这样就会执行到 <code>test</code> 文件夹下所有的测试脚本，不论在那一层。</li>
-</ol>
-<hr>
-<p>参考文章/引用文章</p>
-<ol>
-<li><a href="http://www.ruanyifeng.com/blog/2015/12/a-mocha-tutorial-of-examples.html" target="_blank" rel="noopener">测试框架 Mocha 实例教程 – 阮一峰</a></li>
-</ol>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/blogs/2018/06/20/learn-mocha-1/">展开全文 >></a>
         </p>
       
 
