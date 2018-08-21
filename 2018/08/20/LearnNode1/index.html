@@ -6,18 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://asd2766.github.io/blogs">
-  <title>白驹过隙的博客</title>
+  <title>nodejs写爬虫笔记 | 白驹过隙的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="开心快乐过好每一天">
-<meta property="og:type" content="website">
-<meta property="og:title" content="白驹过隙的博客">
-<meta property="og:url" content="https://asd2766.github.io/blogs/index.html">
+  <meta name="description" content="具体思路 引入需要的依赖，创建url 分析网站数据构成，根据页面的组成来分析数据 发起请求，解析数据 存储数据  参考文章:  10分钟教你撸一个nodejs爬虫系统 基于Node.js实现一个小小的爬虫">
+<meta property="og:type" content="article">
+<meta property="og:title" content="nodejs写爬虫笔记">
+<meta property="og:url" content="https://asd2766.github.io/blogs/2018/08/20/LearnNode1/index.html">
 <meta property="og:site_name" content="白驹过隙的博客">
-<meta property="og:description" content="开心快乐过好每一天">
+<meta property="og:description" content="具体思路 引入需要的依赖，创建url 分析网站数据构成，根据页面的组成来分析数据 发起请求，解析数据 存储数据  参考文章:  10分钟教你撸一个nodejs爬虫系统 基于Node.js实现一个小小的爬虫">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-08-21T12:33:53.507Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="白驹过隙的博客">
-<meta name="twitter:description" content="开心快乐过好每一天">
+<meta name="twitter:title" content="nodejs写爬虫笔记">
+<meta name="twitter:description" content="具体思路 引入需要的依赖，创建url 分析网站数据构成，根据页面的组成来分析数据 发起请求，解析数据 存储数据  参考文章:  10分钟教你撸一个nodejs爬虫系统 基于Node.js实现一个小小的爬虫">
   
   
     <link rel="icon" href="/favicon.png">
@@ -147,16 +148,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-LearnNode1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-LearnNode1" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/blogs/2018/08/20/LearnNode1/">nodejs写爬虫笔记</a>
+    <h1 class="article-title" itemprop="name">
+      nodejs写爬虫笔记
     </h1>
   
 
@@ -184,6 +183,27 @@
       
 
       
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
     </div>
     <div class="article-info article-info-index">
       
@@ -191,16 +211,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/blogs/2018/08/20/LearnNode1/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://asd2766.github.io/blogs/2018/08/20/LearnNode1/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/blogs/2018/08/14/LearnSecurity/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">安全</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -220,1084 +299,14 @@
 
 
 
-
-  
-    <article id="post-LearnSecurity" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blogs/2018/08/14/LearnSecurity/">安全</a>
-    </h1>
-  
-
-        
-        <a href="/blogs/2018/08/14/LearnSecurity/" class="archive-article-date">
-  	<time datetime="2018-08-13T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="浏览器的同源策略"><a href="#浏览器的同源策略" class="headerlink" title="浏览器的同源策略"></a>浏览器的同源策略</h2><p><strong>一个源的概念</strong></p>
-<blockquote>
-<p>如果两个页面的协议，端口和域名相同，则表示这两个页面具有相同的源。</p>
-</blockquote>
-<p><strong>跨源（跨域）网络访问</strong></p>
-<blockquote>
-<p>同源策略限制了不同源之间的交互，例如在使用<code>XMLHttpRequest</code>和<code>&lt;img&gt;</code>标签时则会受到同源策略的约束。</p>
-</blockquote>
-<p>这些交互通常分为三类：</p>
-<ol>
-<li>通常允许跨域写操作（Cross-origin Write）。例如链接（link），重定向以及向表单提交。特定少数 HTTP 请求需要添加 preflight。</li>
-<li>通常允许跨域资源嵌入（Cross-origin embedding）。</li>
-<li>通常不允许跨域读操作（Cross-origin reads）。但通常可以通过内嵌资源来巧妙地进行读取访问。例如可以读取嵌入图片的高度和宽度，调用内嵌脚本的方法，或availability of an embedded resource.</li>
-</ol>
-<blockquote>
-<p>ps：iframe 可以载入任何资源。如果站点不想被载入，可以设置 X-Frame-Options 消息头来阻止。</p>
-</blockquote>
-<p><strong>如何允许跨域访问</strong></p>
-<p>使用 <code>CORS</code> 允许跨域访问。</p>
-<p><strong>如何禁止跨域访问</strong></p>
-<ol>
-<li>阻止跨域写操作，只要检测请求中的一个不可测的标记（CSRF token）即可，这个标记被称为<a href="https://www.owasp.org/index.php/Cross-Site_Request_Forgery_%28CSRF%29" target="_blank" rel="noopener">Cross-Site Request Forgery (CSRF)</a> 标记。必须使用这个标记来阻止页面的跨站读操作。</li>
-<li>阻止资源的跨站读取，需要保证该资源是不可嵌入的。阻止嵌入行为是必须的，因为嵌入资源通常向其暴露信息。</li>
-<li>阻止跨站嵌入，需要确保你的资源不能是以上列出的可嵌入资源格式。多数情况下浏览器都不会遵守<code>Content-Type</code>消息头。例如，如果您在HTML文档中指定<code>&lt;script&gt;</code>标记，则浏览器将尝试将<code>HTML</code>解析为<code>Javascript</code>。当您的资源不是您站点的入口，您还可以使用<code>SCRF</code>令牌来防止嵌入。</li>
-</ol>
-<h2 id="CSRF"><a href="#CSRF" class="headerlink" title="CSRF"></a>CSRF</h2><blockquote>
-<p>CSRF (Cross-site Request Forgery) – 跨站请求伪造，是一种挟制用户在当前已登录的Web应用程序上执行非本意操作的攻击方式。跟跨网站脚本（XSS）相比，XSS 利用的是用户对指定网站的信任，CSRF 利用的是网站对用户网页浏览器的信任。</p>
-</blockquote>
-<p><strong>例子</strong></p>
-<p>假如一家银行用以执行操作的URL地址如下：<code>http://www.examplebank.com/withdraw?account=AccoutName&amp;amount=1000&amp;for=PayeeName</code>，一个恶意攻击者可以在另一个网址放置如下代码：<code>&lt;img src=&quot;http://www.examplebank.com/withdraw?account=Alice&amp;amount=1000&amp;for=Badman&quot;&gt;</code>，如果有账户名为Alice的的用户访问了恶意网站，而她之前刚访问过银行不久，登录信息尚未过期，那么她将损失1000资金。</p>
-<p>这种恶意网站可以有很多形式，可以藏身于论坛、博客等任何用户生成内容的网站中。这意味着<strong>如果服务器端没有做防御措施的话，用户即使访问熟悉的可信网站也有受到攻击的可能</strong>。</p>
-<p>通过例子我们可以看出，攻击者并不能通过<code>CSRF</code>攻击来直接获取用户的账户控制权，也不能直接窃取用户任何信息。他们能做到的是<strong>欺骗用户浏览器，让其以用户的名义执行操作。</strong></p>
-<p><strong>防护措施</strong></p>
-<ol>
-<li>检查 Referer 字段。</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">在 HTTP 请求头中有个 Referer 字段，这个字段记录了该请求的来源地址。可以通过这个字段来进行校验，如果发现来源网页来自其他网站，那么表示这个请求是黑客的 CSRF 攻击，拒绝该请求。</span><br><span class="line"></span><br><span class="line">但是这个方法并非万无一失，目前已经有方法可以篡改 Referer 的值。就算最新的浏览器不会被篡改 Referer 值，用户认为这个值会泄露用户隐私，可以自行设置请求的时候不带 Referer 值。</span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>添加校验的 Token</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">在请求URL中添加 Token 相对 Referer 来说要安全一些。 Token 可以在用户登录成功之后放置到 session 之中。</span><br><span class="line"></span><br><span class="line">这个方法还有一个缺点是难以保证 token 本身的安全。特别是在一些论坛之类支持用户自己发表内容的网站，黑客可以在上面发布自己个人网站的地址。由于系统也会在这个地址后面加上 token，黑客可以在自己的网站上得到这个 token，并马上就可以发动 CSRF 攻击。为了避免这一点，系统可以在添加 token 的时候增加一个判断，如果这个链接是链到自己本站的，就在后面添加 token，如果是通向外网则不加。不过，即使这个 csrftoken 不以参数的形式附加在请求之中，黑客的网站也同样可以通过 Referer 来得到这个 token 值以发动 CSRF 攻击。这也是一些用户喜欢手动关闭浏览器 Referer 功能的原因。</span><br></pre></td></tr></table></figure>
-<ol start="3">
-<li>尽量不要在页面的链接中暴露用户隐私信息。</li>
-<li>对于用户修改删除等操作最好都使用 post 操作。</li>
-<li>避免全站通用的cookie，严格设置cookie的域。</li>
-</ol>
-<h2 id="XSS（Cross-site-scripting）"><a href="#XSS（Cross-site-scripting）" class="headerlink" title="XSS（Cross-site scripting）"></a>XSS（Cross-site scripting）</h2><blockquote>
-<p>XSS 是一种网站应用的的安全漏洞攻击，是代码注入的一种。它允许恶意用户将代码注入到网页上，其他用户在观看网页时就会收到影响。这类攻击通常包含了 HTML 以及用户端脚本语言。</p>
-</blockquote>
-<p><strong>攻击手段和目的</strong></p>
-<p>攻击者是被攻击者在浏览器中执行脚本后，如果需要收集来自被攻击者的数据（如cookie或者其他敏感信息），可以自行架设一个网站，让被攻击者通过 Javascript 等方式把收集好的数据作为参数提交，随后便可记录在自己的数据库中。</p>
-<p>常用的手段：</p>
-<ol>
-<li>盗用 cookie，获取敏感信息。</li>
-<li>利用植入 Flash，通过 crossdomain 权限设置进一步获取最高权限；或者利用 Java 等得到类似的操作。</li>
-<li>利用iframe、frame、XMLHttpRequest或上述Flash等方式，以（被攻击）用户的身份执行一些管理动作，或执行一些一般的如发微博、加好友、发私信等操作。</li>
-<li>利用可被攻击的域受到其他域信任的特点，以受信任来源的身份请求一些平时不允许的操作，如进行不当的投票活动。</li>
-<li>在访问量极大的一些页面上的XSS可以攻击一些小型网站，实现DDoS攻击的效果。</li>
-</ol>
-<p><strong>检测方法</strong></p>
-<p>通常有一些方式可以测试网站是否有正确处理特殊字符</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">1. &gt;&lt;script&gt;alert(document.cookie)&lt;/script&gt;</span><br><span class="line">2. =&apos;&gt;&lt;script&gt;alert(document.cookie)&lt;/script&gt;</span><br><span class="line">3. &quot;&gt;&lt;script&gt;alert(document.cookie)&lt;/script&gt;</span><br><span class="line">4. &lt;script&gt;alert(document.cookie)&lt;/script&gt;</span><br><span class="line">5. &lt;script&gt;alert (vulnerable)&lt;/script&gt;</span><br><span class="line">6. %3Cscript%3Ealert(&apos;XSS&apos;)%3C/script%3E</span><br><span class="line">7. &lt;script&gt;alert(&apos;XSS&apos;)&lt;/script&gt;</span><br><span class="line">8. &lt;img src=&quot;javascript:alert(&apos;XSS&apos;)&quot;&gt;</span><br><span class="line">9. &lt;img src=&quot;http://xxx.com/yyy.png&quot; onerror=&quot;alert(&apos;XSS&apos;)&quot;&gt;</span><br><span class="line">10. &lt;div style=&quot;height:expression(alert(&apos;XSS&apos;),1)&quot;&gt;&lt;/div&gt;（这个仅于IE7(含)之前有效）</span><br></pre></td></tr></table></figure>
-<p><strong>漏洞的防御和利用</strong></p>
-<ol>
-<li>过滤特殊字符</li>
-</ol>
-<p>避免XSS的方法之一主要是将用户所提供的内容进行过滤，许多语言都有提供对HTML的过滤：</p>
-<p>1) PHP的htmlentities()或是htmlspecialchars()。</p>
-<p>2) Python的cgi.escape()。</p>
-<p>3) ASP的Server.HTMLEncode()。</p>
-<p>5) ASP.NET的Server.HtmlEncode()或功能更强的Microsoft Anti-Cross Site Scripting Library</p>
-<p>6) Java的xssprotect (Open Source Library)。</p>
-<p>7) Node.js的node-validator。</p>
-<ol start="2">
-<li>使用HTTP头指定类型</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">很多时候可以使用HTTP头指定内容的类型，使得输出的内容避免被作为HTML解析。如在PHP语言中使用以下代码：</span><br><span class="line"></span><br><span class="line">&lt;?php</span><br><span class="line">   header(&apos;Content-Type: text/javascript; charset=utf-8&apos;);</span><br><span class="line">?&gt;</span><br><span class="line"></span><br><span class="line">即可强行指定输出内容为文本/JavaScript脚本（顺便指定了内容编码），而非可以引发攻击的HTML。</span><br></pre></td></tr></table></figure>
-<hr>
-<p>参考资料：</p>
-<ol>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/Security/Same-origin_policy" target="_blank" rel="noopener">浏览器的同源策略</a></li>
-<li><a href="https://zh.wikipedia.org/wiki/%E8%B7%A8%E7%AB%99%E8%AF%B7%E6%B1%82%E4%BC%AA%E9%80%A0" target="_blank" rel="noopener">跨站请求伪造</a></li>
-<li><a href="https://zh.wikipedia.org/wiki/%E8%B7%A8%E7%B6%B2%E7%AB%99%E6%8C%87%E4%BB%A4%E7%A2%BC" target="_blank" rel="noopener">跨網站指令碼</a></li>
-<li><a href="https://zh.wikipedia.org/wiki/%E9%98%BB%E6%96%B7%E6%9C%8D%E5%8B%99%E6%94%BB%E6%93%8A" target="_blank" rel="noopener">阻斷服務攻擊</a></li>
-</ol>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/blogs/2018/08/14/LearnSecurity/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-LearnWebPerformance2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blogs/2018/08/06/LearnWebPerformance2/">学习前端性能（二）</a>
-    </h1>
-  
-
-        
-        <a href="/blogs/2018/08/06/LearnWebPerformance2/" class="archive-article-date">
-  	<time datetime="2018-08-05T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="建议使用CDN"><a href="#建议使用CDN" class="headerlink" title="建议使用CDN"></a>建议使用CDN</h2><p>为什么说建议使用<code>cdn</code>呢？</p>
-<ol>
-<li><code>CDN</code> 可不带cookie，减少http请求头的代销</li>
-<li>分担主域的压力，分流</li>
-<li>不容易被<code>DOS</code>攻击</li>
-<li>安全，静态资源可存放<code>CDN</code></li>
-</ol>
-<p>性能优化步骤：</p>
-<ol>
-<li>分析网站性能</li>
-<li>根据分析的数据进行对应的调整</li>
-</ol>
-<h2 id="JIT-just-in-time"><a href="#JIT-just-in-time" class="headerlink" title="JIT (just in time)"></a>JIT (just in time)</h2><h4 id="编译方式："><a href="#编译方式：" class="headerlink" title="编译方式："></a>编译方式：</h4><ol>
-<li>解释器：边解释边翻译，执行时进行翻译</li>
-<li>编译器：先把源码编译成对应目标代码，执行时就可不用再次翻译，可以直接运行</li>
-</ol>
-<h4 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h4><ol>
-<li>解释器：启动执行快，所以最开始的浏览器都是采用 JavaScript 解释器，但是如果执行一个for循环时，解释器需要一遍又一遍的进行翻译，导致效率低下。</li>
-<li>编译器：与解释器刚好相反，另外一个不同是，编译器可以用更多的时间对代码进行优化，以使的代码执行的更快。而解释器是在 runtime 时进行这一步骤的，这就决定了它不可能在翻译的时候用很多时间进行优化。</li>
-</ol>
-<h4 id="Just-in-time-编译器（混合模式）：综合两者优点"><a href="#Just-in-time-编译器（混合模式）：综合两者优点" class="headerlink" title="Just-in-time 编译器（混合模式）：综合两者优点"></a>Just-in-time 编译器（混合模式）：综合两者优点</h4><blockquote>
-<p>起初，浏览器监视所有通过解释器的代码，如果同一行代码执行了几次，将其标记为<code>warn</code>，如果同一行代码执行了很多次，就会将其标记为<code>hot</code>。</p>
-<p>如果一段代码变为了<code>warn</code>，那么 JIT 就会将其送到编译器进行编译，并且把编译结果存储起来。下次如果执行到同样的代码的时候就会直接运行编译的结果。</p>
-<p>如果一段代码变为 <code>very hot</code>，那么 JIT 就会将其送到优化编译器进行编译，生成一个更高效的代码版本并存储。</p>
-</blockquote>
-<h2 id="节流和防抖-throttle-debounce"><a href="#节流和防抖-throttle-debounce" class="headerlink" title="节流和防抖(throttle/debounce)"></a>节流和防抖(throttle/debounce)</h2><p><strong>用电梯超时来举例子</strong></p>
-<ol>
-<li>throttle：保证电梯第一个人进来以后，15秒后准时运行一次，不等待。如果没人就待机。</li>
-<li>debounce：如果电梯里有人进来，等待15秒，如果又有人进来，重新等待15秒，直到15秒超时，开始运送。</li>
-</ol>
-<p><strong>使用示例</strong></p>
-<ol>
-<li>_.throttle</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function log() &#123;</span><br><span class="line">	console.log($(window).scrollTop(), event.timeStamp);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 控制台记录窗口滚动事件，触发频率比你想象要快</span><br><span class="line">$(window).scroll(log);</span><br><span class="line"></span><br><span class="line">// 控制台记录窗口滚动事件，250ms最多触发一次</span><br><span class="line">$(window).scroll(_.throttle(log, 250));</span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>_.debounce</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function ajax_lookup(event) &#123;</span><br><span class="line">	// 对输入的内容进行ajax查询</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 字符输入的频率比你预想的要快，Ajax来不及回复</span><br><span class="line">$(&apos;input:text&apos;).keyup(ajax_lookup);</span><br><span class="line"></span><br><span class="line">// 当用户停顿 250ms 后才开始查询</span><br><span class="line">$(&apos;input:text&apos;).keyup(_.debounce(ajax_lookup, 250));</span><br></pre></td></tr></table></figure>
-<p><strong>使用场景</strong></p>
-<p>只要牵涉到连续事件或频率控制相关的应用都可以考虑到这两个函数，比如：</p>
-<ol>
-<li>游戏射击，keydown 事件</li>
-<li>文本输入、自动完成，keyup 事件</li>
-<li>鼠标移动，mousemove 事件</li>
-<li>DOM 元素动态定位，window 对象的 resize 和 scroll 事件</li>
-</ol>
-<p>前两者 debounce 和 throttle 都可以按需使用；后两者肯定是用 throttle 了。如果不做过滤处理，每秒种甚至会触发数十次相应的事件。尤其是 mousemove 事件，每移动一像素都可能触发一次事件。如果是在一个画布上做一个鼠标相关的应用，过滤事件处理是必须的，否则肯定会造成糟糕的体验。</p>
-<h2 id="FCP-和-DCL"><a href="#FCP-和-DCL" class="headerlink" title="FCP 和 DCL"></a>FCP 和 DCL</h2><p>FCP: First Page Content</p>
-<p>DCL: DOM Content Loaded</p>
-<p>当用户进入网站，得到视觉效果时开始测量 FCP，当载入 HTML 文档时开始测量 DCL</p>
-<hr>
-<p>参考资料：</p>
-<ol>
-<li><a href="https://developers.google.cn/web/fundamentals/performance/why-performance-matters/" target="_blank" rel="noopener">https://developers.google.cn/web/fundamentals/performance/why-performance-matters/</a></li>
-<li><a href="https://hacks.mozilla.org/2017/02/a-crash-course-in-just-in-time-jit-compilers/" target="_blank" rel="noopener">Just-in-time</a></li>
-<li><a href="https://blog.coding.net/blog/the-difference-between-throttle-and-debounce-in-underscorejs" target="_blank" rel="noopener">浅谈 Underscore.js 中 _.throttle 和 _.debounce 的差异</a></li>
-<li><a href="https://www.linkedin.com/pulse/why-does-page-speed-insights-use-fcp-dcl-priyanka-khanna-1" target="_blank" rel="noopener">Why does Page Speed Insights use FCP and DCL?</a></li>
-</ol>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/blogs/2018/08/06/LearnWebPerformance2/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-LearnWebPerformance" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blogs/2018/07/30/LearnWebPerformance/">学习前端性能（一）</a>
-    </h1>
-  
-
-        
-        <a href="/blogs/2018/07/30/LearnWebPerformance/" class="archive-article-date">
-  	<time datetime="2018-07-29T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>前端性能影响着很多，对于公司来说，性能在一定程度上跟利益挂钩。如果你的网站时间很长，那么你就会流失掉很多客户。这对于公司来说是无法容忍的，所以做好前端的性能优化是很重要的。</p>
-<h2 id="如何做网站的性能优化"><a href="#如何做网站的性能优化" class="headerlink" title="如何做网站的性能优化"></a>如何做网站的性能优化</h2><p>一、content 方面</p>
-<blockquote>
-<p>减少HTTP请求：合并文件、CSS精灵、inline Image  </p>
-<p>减少DNS查询：DNS查询完成之前浏览器不能从这个主机下载任何任何文件。方法：DNS缓存、将资源分布到恰当数量的主机名，平衡并行下载和DNS查询</p>
-<p>避免重定向：多余的中间访问</p>
-<p>使Ajax可缓存</p>
-<p>非必须组件延迟加载</p>
-<p>未来所需组件预加载</p>
-<p>减少DOM元素数量</p>
-<p>将资源放到不同的域下：浏览器同时从一个域下载资源的数目有限，增加域可以提高并行下载量</p>
-<p>减少iframe数量</p>
-<p>不要404</p>
-</blockquote>
-<p>二、 Server方面</p>
-<blockquote>
-<p>使用CDN（好处：1. CDN不带cookie，可以减少请求头的大小； 2. 可以减少主域的压力，分流 3. 不容易被dos）</p>
-<p>添加Expires或者Cache-Control响应头</p>
-<p>对组件使用Gzip压缩</p>
-<p>配置ETag</p>
-<p>Flush Buffer Early</p>
-<p>Ajax使用GET进行请求</p>
-<p>避免空src的img标签</p>
-<p>Cookie方面</p>
-<p>减小cookie大小</p>
-<p>引入资源的域名不要包含cookie</p>
-</blockquote>
-<p>三、css方面</p>
-<blockquote>
-<p>将样式表放到页面顶部</p>
-<p>不使用CSS表达式</p>
-<p>使用不使用@import</p>
-<p>不使用IE的Filter</p>
-</blockquote>
-<p>四、Javascript方面</p>
-<blockquote>
-<p>将脚本放到页面底部</p>
-<p>将javascript和css从外部引入</p>
-<p>压缩javascript和css</p>
-<p>删除不需要的脚本</p>
-<p>减少DOM访问</p>
-<p>合理设计事件监听器</p>
-</blockquote>
-<p>五、图片方面</p>
-<blockquote>
-<p>优化图片：根据实际颜色需要选择色深、压缩</p>
-<p>优化css精灵</p>
-<p>不要在HTML中拉伸图片</p>
-<p>保证favicon.ico小并且可缓存</p>
-</blockquote>
-<p>png: 支持半透明</p>
-<p>jpg: 支持有损压缩，且质量还可以，网站上的大部分用的这种格式。</p>
-<p>webp: 可以在不损失质量的情况下将图片体积降下来。</p>
-<ol>
-<li>我们看到一些网址的webp请求为： /220?tp=webp；刚开始会通过base64的webp的图片加载到页面上，如果浏览器可以识别，那么返回webp格式，否则返回jpg格式图片</li>
-<li>webp文件小又清晰，但是它生产很慢，所以一般第一次请求会先返回jpg，生产webp之后会先缓存起来，那么下次请求就可以直接返回webp了。</li>
-</ol>
-<p>六、 移动方面</p>
-<blockquote>
-<p>保证组件小于25k</p>
-<p>Pack Components into a Multipart Document</p>
-</blockquote>
-<h2 id="性能测试工具"><a href="#性能测试工具" class="headerlink" title="性能测试工具"></a>性能测试工具</h2><ol>
-<li>lighthouse (更多关注用户体验) (i. 安装chrome插件 ii. 开发者工具-&gt;audit)</li>
-<li>pagespeed（主要用来检测页面加载速度）</li>
-<li>gtmetrix</li>
-</ol>
-<hr>
-<p>参考资料：</p>
-<ol>
-<li><a href="https://github.com/qiu-deqing/FE-interview#%E5%A6%82%E4%BD%95%E8%BF%9B%E8%A1%8C%E7%BD%91%E7%AB%99%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96" target="_blank" rel="noopener">如何做性能优化</a></li>
-<li><a href="http://yslow.org/" target="_blank" rel="noopener">yslow</a></li>
-<li><a href="https://developers.google.cn/web/fundamentals/performance/why-performance-matters/" target="_blank" rel="noopener">https://developers.google.cn/web/fundamentals/performance/why-performance-matters/</a></li>
-</ol>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/blogs/2018/07/30/LearnWebPerformance/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-learnTemplate" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blogs/2018/07/22/learnTemplate/">学习模板语法</a>
-    </h1>
-  
-
-        
-        <a href="/blogs/2018/07/22/learnTemplate/" class="archive-article-date">
-  	<time datetime="2018-07-21T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="模板引擎"><a href="#模板引擎" class="headerlink" title="模板引擎"></a>模板引擎</h2><p>在没有模板语法的时代，我们是直接操作dom来进行元素的增减。后来 jquery 的作者做了个小东西来做模板的处理– <code>jquery Micro-Templating</code>。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">// Simple JavaScript Templating</span><br><span class="line">// John Resig - http://ejohn.org/ - MIT Licensed</span><br><span class="line">(function()&#123;</span><br><span class="line">  var cache = &#123;&#125;;</span><br><span class="line">  </span><br><span class="line">  this.tmpl = function tmpl(str, data)&#123;</span><br><span class="line">    // Figure out if we&apos;re getting a template, or if we need to</span><br><span class="line">    // load the template - and be sure to cache the result.</span><br><span class="line">    var fn = !/\W/.test(str) ?</span><br><span class="line">      cache[str] = cache[str] ||</span><br><span class="line">        tmpl(document.getElementById(str).innerHTML) :</span><br><span class="line">      </span><br><span class="line">      // Generate a reusable function that will serve as a template</span><br><span class="line">      // generator (and which will be cached).</span><br><span class="line">      new Function(&quot;obj&quot;,</span><br><span class="line">        &quot;var p=[],print=function()&#123;p.push.apply(p,arguments);&#125;;&quot; +</span><br><span class="line">        </span><br><span class="line">        // Introduce the data as local variables using with()&#123;&#125;</span><br><span class="line">        &quot;with(obj)&#123;p.push(&apos;&quot; +</span><br><span class="line">        </span><br><span class="line">        // Convert the template into pure JavaScript</span><br><span class="line">        str</span><br><span class="line">          .replace(/[\r\t\n]/g, &quot; &quot;)</span><br><span class="line">          .split(&quot;&lt;%&quot;).join(&quot;\t&quot;)</span><br><span class="line">          .replace(/((^|%&gt;)[^\t]*)&apos;/g, &quot;$1\r&quot;) // $1 = (^|%&gt;)[^\t]* , &apos; 换成 \r </span><br><span class="line">          .replace(/\t=(.*?)%&gt;/g, &quot;&apos;,$1,&apos;&quot;) // 把 \t=(.*?)%&gt; 全部替换成 &apos;,(.*?),&apos;</span><br><span class="line">          .split(&quot;\t&quot;).join(&quot;&apos;);&quot;)</span><br><span class="line">          .split(&quot;%&gt;&quot;).join(&quot;p.push(&apos;&quot;)</span><br><span class="line">          .split(&quot;\r&quot;).join(&quot;\\&apos;&quot;)</span><br><span class="line">      + &quot;&apos;);&#125;return p.join(&apos;&apos;);&quot;);</span><br><span class="line"></span><br><span class="line">      // .split(&quot;&lt;%&quot;).join(&quot;\t&quot;) 等价于 .replace(&quot;&lt;%&quot;, &quot;\t&quot;)</span><br><span class="line">      // 为什么不全部用replace，因为使用split，join 比 replace性能会更好</span><br><span class="line">      // 不过现代的浏览器性能相差不大</span><br><span class="line">    </span><br><span class="line">    // Provide some basic currying to the user</span><br><span class="line">    return data ? fn( data ) : fn;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
-<h4 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=&quot;text/html&quot; id=&quot;item_tmpl&quot;&gt;</span><br><span class="line">  &lt;div id=&quot;&lt;%=id%&gt;&quot; class=&quot;&lt;%=(i % 2 == 1 ? &quot; even&quot; : &quot;&quot;)%&gt;&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;grid_1 alpha right&quot;&gt;</span><br><span class="line">      &lt;img class=&quot;righted&quot; src=&quot;&lt;%=profile_image_url%&gt;&quot;/&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;grid_6 omega contents&quot;&gt;</span><br><span class="line">      &lt;p&gt;</span><br><span class="line">        &lt;b&gt;</span><br><span class="line">        	&lt;a href=&quot;/&lt;%=from_user%&gt;&quot;&gt;&lt;%=from_user%&gt;&lt;/a&gt;:</span><br><span class="line">        &lt;/b&gt;</span><br><span class="line">        &lt;%=text%&gt;</span><br><span class="line">      &lt;/p&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<p>或者你可以使用内联的script</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=&quot;text/html&quot; id=&quot;user_tmpl&quot;&gt;</span><br><span class="line">  &lt;% for ( var i = 0; i &lt; users.length; i++ ) &#123; %&gt;</span><br><span class="line">    &lt;li&gt;</span><br><span class="line">    	&lt;a href=&quot;&lt;%=users&amp;#91;i&amp;#93;.url%&gt;&quot;&gt;</span><br><span class="line">    		&lt;%=users&amp;#91;i&amp;#93;.name%&gt;</span><br><span class="line">    	&lt;/a&gt;</span><br><span class="line">    &lt;/li&gt;</span><br><span class="line">  &lt;% &#125; %&gt;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<p>在页面中嵌入不知名的内容类型的脚本时，浏览器，搜索引擎和屏幕阅读器在解析到不认识的的内容的时候，会自动进行忽略（浏览器不认识 <code>text/html</code>，所以会忽略这块<code>script</code>内容），这样我们就可以偷偷的把模板放入到我们的页面里，然后就可以愉快的使用模板了。</p>
-<p>如何使用这些模板呢？</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">var results = document.getElementById(&quot;results&quot;);</span><br><span class="line">// tmpl(&quot;item_tmpl&quot;, dataObject) : 第一个参数为模板的id， 第二个参数为</span><br><span class="line">results.innerHTML = tmpl(&quot;item_tmpl&quot;, dataObject);</span><br><span class="line"></span><br><span class="line">//  tmpl(&quot;item_tmpl&quot;) 返回结果：</span><br><span class="line">(function anonymous(obj) &#123;</span><br><span class="line">  var p = [],</span><br><span class="line">  print = function () &#123;</span><br><span class="line">    p.push.apply(p, arguments);</span><br><span class="line">  &#125;;</span><br><span class="line">  </span><br><span class="line">  with(obj) &#123;</span><br><span class="line">    p.push(&apos;     &lt;div id=&quot;&apos;, id, &apos;&quot; class=&quot;&apos;, (i % 2 == 1 ? &quot; even&quot; : &quot;&quot;), &apos;&quot;&gt;       &lt;div class=&quot;grid_1 alpha right&quot;&gt;         &lt;img class=&quot;righted&quot; src=&quot;&apos;, profile_image_url, &apos;&quot;/&gt;       &lt;/div&gt;       &lt;div class=&quot;grid_6 omega contents&quot;&gt;         &lt;p&gt;&lt;b&gt;&lt;a href=&quot;/&apos;, from_user, &apos;&quot;&gt;&apos;, from_user, &apos;&lt;/a&gt;:&lt;/b&gt; &apos;, text, &apos;&lt;/p&gt;       &lt;/div&gt;     &lt;/div&gt;   &apos;);</span><br><span class="line">  &#125;</span><br><span class="line">  return p.join(&apos;&apos;); // join(&apos;&apos;) 将 p 变成字符串</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">// tmpl(&quot;item_tmpl&quot;, dataObject) 返回结果</span><br><span class="line">&quot;     &lt;div id=&quot;1&quot; class=&quot; even&quot;&gt;       &lt;div class=&quot;grid_1 alpha right&quot;&gt;         &lt;img class=&quot;righted&quot; src=&quot;https://www.baidu.com/img/xinshouye_b4fb6197029635ff552aafdcb3ee1c51.png&quot;/&gt;       &lt;/div&gt;       &lt;div class=&quot;grid_6 omega contents&quot;&gt;         &lt;p&gt;&lt;b&gt;&lt;a href=&quot;/wujq&quot;&gt;wujq&lt;/a&gt;:&lt;/b&gt; hello world&lt;/p&gt;       &lt;/div&gt;     &lt;/div&gt;   &quot;</span><br></pre></td></tr></table></figure>
-<h2 id="模板引擎过程"><a href="#模板引擎过程" class="headerlink" title="模板引擎过程"></a>模板引擎过程</h2><ol>
-<li>先做出模板字符串</li>
-<li>无数据情况下将字符串编译成模板函数</li>
-<li>有数据情况下将其编译成带数据的html数据</li>
-</ol>
-<blockquote>
-<p>建议通过源码学习作者的思考过程，参考这个自己做一个简单模板引擎来理解。</p>
-</blockquote>
-<h2 id="现有的模板引擎"><a href="#现有的模板引擎" class="headerlink" title="现有的模板引擎"></a>现有的模板引擎</h2><ol>
-<li>以功能性为代表：handlebars</li>
-<li>以性能为代表：doT</li>
-</ol>
-<hr>
-<p>参考资料：</p>
-<ol>
-<li><a href="https://johnresig.com/blog/javascript-micro-templating/" target="_blank" rel="noopener">javascript-micro-templating</a></li>
-<li><a href="http://handlebarsjs.com/" target="_blank" rel="noopener">handlebars</a></li>
-<li><a href="http://olado.github.io/doT/index.html" target="_blank" rel="noopener">doT</a></li>
-</ol>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/blogs/2018/07/22/learnTemplate/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-LearnMonitor" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blogs/2018/07/20/LearnMonitor/">学习前端性能监控</a>
-    </h1>
-  
-
-        
-        <a href="/blogs/2018/07/20/LearnMonitor/" class="archive-article-date">
-  	<time datetime="2018-07-19T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="为什么要做前端监控"><a href="#为什么要做前端监控" class="headerlink" title="为什么要做前端监控"></a>为什么要做前端监控</h2><blockquote>
-<p>对于公司来说，性能在一定程度上跟利益挂钩。如果你的网站时间很长，那么你就会流失掉很多客户。这对于公司来说是无法容忍的，所以做好前端的性能监控是很重要的。</p>
-</blockquote>
-<h4 id="好处："><a href="#好处：" class="headerlink" title="好处："></a>好处：</h4><ol>
-<li>解决被动的局面，主动发现潜在问题，及时解决验证修复</li>
-<li>验证业务优化方案，积累数据</li>
-<li>优化方案的提出和选型，基于生产环境</li>
-</ol>
-<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><p>性能常用评估工具：</p>
-<ol>
-<li>Page Speed</li>
-<li>WebPagetest</li>
-<li>PhantomJS</li>
-<li>GTmetrix</li>
-</ol>
-<p>错误上报工具、埋点上报：</p>
-<ol>
-<li>badjs: 脚本错误上报</li>
-<li>monitor: 一切可以用累积量表示的上报（PV/接口成功或失败/是否支持webscoket/…）</li>
-<li>huoto: 测速上报</li>
-<li>tdbank: 用户行为上报</li>
-<li>PerformanceTiming: 性能监控上报</li>
-<li>各种统计工具（百度，Google Analytics，MTA等）</li>
-</ol>
-<hr>
-<p>参考资料：</p>
-<ol>
-<li><a href="http://fex.baidu.com/blog/2014/05/build-performance-monitor-in-7-days/" target="_blank" rel="noopener">7 天打造前端性能监控系统</a></li>
-<li><a href="https://mp.weixin.qq.com/s/YiKRY_LDURY0uONtEhkUfg" target="_blank" rel="noopener">大前端时代前端监控的最佳实践</a></li>
-<li><a href="https://cloud.tencent.com/developer/article/1004564" target="_blank" rel="noopener">腾讯云Badjs镜像使用入门</a></li>
-</ol>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/blogs/2018/07/20/LearnMonitor/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-LearnErrorHandler" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blogs/2018/07/10/LearnErrorHandler/">学习错误捕捉（一）</a>
-    </h1>
-  
-
-        
-        <a href="/blogs/2018/07/10/LearnErrorHandler/" class="archive-article-date">
-  	<time datetime="2018-07-09T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="错误捕捉"><a href="#错误捕捉" class="headerlink" title="错误捕捉"></a>错误捕捉</h2><p>参考文档：<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/GlobalEventHandlers/onerror" target="_blank" rel="noopener">GlobalEventHandlers.onerror</a></p>
-<p><strong>全局错误捕捉，即所有的错误都会触发这个方法。</strong></p>
-<ol>
-<li><strong>window.onerror</strong></li>
-</ol>
-<blockquote>
-<p>window.onerror = function(message, source, lineno, colno, error) { … }</p>
-<p>message：错误信息（字符串）。可用于HTML onerror=””处理程序中的event<br>source：发生错误的脚本URL（字符串）<br>lineno：发生错误的行号（数字）<br>colno：发生错误的列号（数字）<br>error：Error对象（对象）</p>
-</blockquote>
-<ol start="2">
-<li><strong>window.addEventListener(‘error’)</strong></li>
-</ol>
-<blockquote>
-<p>window.addEventListener(‘error’, function(event) { … })</p>
-<p>event包含有关事件和错误的所有信息。</p>
-</blockquote>
-<ol start="3">
-<li><strong>element.onerror</strong></li>
-</ol>
-<blockquote>
-<p>element.onerror = function(event) { … }</p>
-<p>element.onerror使用单一Event参数的函数作为其处理函数。</p>
-</blockquote>
-<h2 id="script-error"><a href="#script-error" class="headerlink" title="script error"></a>script error</h2><p>参考文档: <a href="https://blog.sentry.io/2016/05/17/what-is-script-error" target="_blank" rel="noopener">script error</a></p>
-<blockquote>
-<p>js 文件中的错误，浏览器控制台会抛出 script error</p>
-</blockquote>
-<p>当载不同域脚本中发生错误，为避免信息泄露，语法错误具体信息不会抛出，取而代之的是简单的<code>script error</code>，我们需要做以下两种方案：</p>
-<ol>
-<li>增加 <code>crossorign=&#39;anonymous&#39;</code> 属性</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=&quot;http://another-domain.com/app.js&quot; crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>加 在响应头增加属性： <code>Cross Origin HTTP header</code></li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Access-Control-Allow-Origin: *</span><br><span class="line">// 或者</span><br><span class="line">Access-Control-Allow-Origin: https://www.example.com</span><br></pre></td></tr></table></figure>
-<ol start="3">
-<li>使用 try…catch</li>
-</ol>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/blogs/2018/07/10/LearnErrorHandler/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-LearnReg" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blogs/2018/06/30/LearnReg/">学习正则表达式</a>
-    </h1>
-  
-
-        
-        <a href="/blogs/2018/06/30/LearnReg/" class="archive-article-date">
-  	<time datetime="2018-06-29T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="概念理解"><a href="#概念理解" class="headerlink" title="概念理解"></a>概念理解</h2><h3 id="字符-–-原义（正常）文本字符-和-元字符"><a href="#字符-–-原义（正常）文本字符-和-元字符" class="headerlink" title="字符 – 原义（正常）文本字符 和 元字符"></a>字符 – 原义（正常）文本字符 和 元字符</h3><blockquote>
-<p>正则表达式语言由两种基本字符组成：原义（正常）文本字符 和 元字符。</p>
-</blockquote>
-<p>元字符：在正则表达式中具有特殊意义的专用字符，可以用来规定其前导字符（即位于元字符前面的字符）在目标对象中出现模式。比如：<code>+</code> <code>*</code> <code>?</code></p>
-<h3 id="量词"><a href="#量词" class="headerlink" title="量词"></a>量词</h3><blockquote>
-<p>量词：分为 贪婪、惰性和支配 这三种</p>
-</blockquote>
-<ol>
-<li>贪婪量词：先看整个字符串是不是一个匹配。如果没有发现匹配，它会去掉字符串中的最后一个字符，再次进行匹配。</li>
-<li>惰性量词：先看整个字符串中的第一个字母是不是一个匹配。如果单独一个字母不够，会再匹配下一个字母，组成一个新的字符串进行匹配，如果还不够就再读取下一个字符，直到完成匹配或者匹配失败。</li>
-<li>支配量词：只尝试匹配整个字符。如果整个字符都不匹配，不做下一步尝试。</li>
-</ol>
-<table>
-<thead>
-<tr>
-<th>贪婪</th>
-<th style="text-align:right">惰性</th>
-<th style="text-align:right">支配</th>
-<th style="text-align:center">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>?</td>
-<td style="text-align:right">??</td>
-<td style="text-align:right">?+</td>
-<td style="text-align:center">可以出现0次或1次，但至多出现1次</td>
-</tr>
-<tr>
-<td>*</td>
-<td style="text-align:right">*?</td>
-<td style="text-align:right">*+</td>
-<td style="text-align:center">可以出现任意次，也可以不出现</td>
-</tr>
-<tr>
-<td>+</td>
-<td style="text-align:right">+?</td>
-<td style="text-align:right">++</td>
-<td style="text-align:center">出现1次或多次，但至少出现1次</td>
-</tr>
-<tr>
-<td>{n}</td>
-<td style="text-align:right">{n}?</td>
-<td style="text-align:right">{n}+</td>
-<td style="text-align:center">一定出现n次</td>
-</tr>
-<tr>
-<td>{n,m}</td>
-<td style="text-align:right">{n,m}?</td>
-<td style="text-align:right">{n,m}+</td>
-<td style="text-align:center">至少出现n次，但至多不能超过m次</td>
-</tr>
-<tr>
-<td>{n,}</td>
-<td style="text-align:right">{n,}?</td>
-<td style="text-align:right">{n,}+</td>
-<td style="text-align:center">可以出现任意次，但至少出现n次</td>
-</tr>
-</tbody>
-</table>
-<h3 id="分组和引用"><a href="#分组和引用" class="headerlink" title="分组和引用"></a>分组和引用</h3><blockquote>
-<p>分组：捕获匹配的子字符串。使用 () 的捕获根据左括号的顺序从 1 开始自动编号。捕获元素编号为零的第一个捕获是由整个正则表达式模式匹配的文本。</p>
-</blockquote>
-<p>比如：(\d{1,3}.){3}\d{1,3}是一个简单的IP地址匹配表达式。要理解这个表达式，请按下列顺序分析它：\d{1,3}匹配1到3位的数字，(\d{1,3}.){3}匹配三位数字加上一个英文句号(这个整体也就是这个分组)重复3次，最后再加上一个一到三位的数字(\d{1,3})。</p>
-<blockquote>
-<p>引用：\n 与第n个分组第一次匹配的字符相匹配 （组是圆括号内的表达式，n是从左到右的左括号数）</p>
-</blockquote>
-<p>比如：匹配单双引号包裹的字符（包括单双引号）([“‘])[a-zA-Z0-9]+\1</p>
-<h3 id="零宽断言"><a href="#零宽断言" class="headerlink" title="零宽断言"></a>零宽断言</h3><blockquote>
-<p>零宽断言是一种零宽度的匹配，它匹配的内容不会保存到匹配结果中，也不会占用index宽度，最终匹配的结果只是一个位置，简单的说，它用于查找在某些内容之前或之后的东西(但返回结果并不包括这些内容)</p>
-</blockquote>
-<p>JavaScript中只支持零宽先行断言</p>
-<p>零宽断言分为4中，但是 <code>javascript</code> 只支持 <code>零宽先行断言</code>,（即只支持<code>?=exp</code>和<code>?!exp</code>）</p>
-<ol>
-<li><p>正向零宽先行断言（?=exp）</p>
-<p> 目标字符出现的位置的右边必须匹配到exp这个表达式</p>
-</li>
-<li><p>负向零宽先行断言（?!exp）</p>
-<p> 目标字符出现的位置的右边不能匹配到exp这个表达式</p>
-</li>
-<li><p>正向零宽后发断言（?&lt;=exp）</p>
-<p> 目标字符出现的位置的左边必须匹配到exp这个表达式</p>
-</li>
-<li><p>负向零宽后发断言（?&lt;!exp）</p>
-<p> 目标字符出现的位置的左边不能匹配到exp这个表达式</p>
-</li>
-</ol>
-<h4 id="正向零宽先行断言（-exp）"><a href="#正向零宽先行断言（-exp）" class="headerlink" title="正向零宽先行断言（?=exp）"></a>正向零宽先行断言（?=exp）</h4><blockquote>
-<p>示例一</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var str = &apos;abcc12abcc123&apos;;</span><br><span class="line">var reg = /ab(?=cc)/;</span><br><span class="line">str.match(reg); // [&quot;ab&quot;, index: 0, input: &quot;abcc12abcc123&quot;, groups: undefined]</span><br></pre></td></tr></table></figure>
-<ol>
-<li>index=0，a 匹配 a 成功，继续匹配第二个字母 b，匹配 b 成功</li>
-<li>继续尝试匹配，(?=cc) 匹配到 ab 后面紧跟的 cc，匹配成功，返回成功结果 ab</li>
-</ol>
-<blockquote>
-<p>示例二</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var str = &apos;abcdefg&apos;;</span><br><span class="line">var reg = /(?=cd)efg/;</span><br><span class="line">str.match(reg); // null</span><br></pre></td></tr></table></figure>
-<p>想要达到匹配效果，即获得 cd 后方的 efg，这个是<code>零宽后发断言</code>，但是 js 里面不支持，所以此时使用的是<code>先行断言</code>。</p>
-<ol>
-<li>?=cd 开始匹配，匹配到 <code>index=2</code> 的时候成功，即匹配到了 c 的位置。匹配成功之后，开始匹配 e。</li>
-<li>因为 <code>?=cd</code> 是零宽断言，不占匹配位置，所以匹配成功之后，下一轮匹配还是从 <code>index=2</code> 开始匹配，即 c 的位置，这个时候开始匹配 e， c != e，匹配失败。</li>
-<li>index = 3 开始匹配 f，匹配失败，下一轮匹配还是失败，所以返回 <code>null</code>。</li>
-<li>想要匹配成功，reg需要改成 <code>/(?=cd)cdefg/</code>。</li>
-</ol>
-<blockquote>
-<p>实例三</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var str = &apos;abcdefg&apos;;</span><br><span class="line">var reg = /ab(?=cd)cdefg/;</span><br><span class="line">str.match(reg); // [&apos;abcdefg&apos;, index: 0, input: &apos;abcdefg&apos;]</span><br></pre></td></tr></table></figure>
-<ol>
-<li>先匹配 <code>ab</code>，匹配成功之后，<code>(?=cd)</code> 开始匹配，<code>ab</code> 后面紧跟着 <code>cd</code>，所以匹配成功</li>
-<li>因为 <code>(?=cd)</code> 不占匹配位置，下一次的匹配还是从 <code>c</code> 开始，开始匹配 <code>cdefg</code></li>
-<li>匹配成功，返回结果 <code>abcdefg</code></li>
-</ol>
-<blockquote>
-<p>零宽断言返回的是位置而不是字符，零宽断言匹配成功后，其余表达式会基于这个返回的位置继续判断</p>
-</blockquote>
-<h4 id="负向零宽先行断言（-exp）"><a href="#负向零宽先行断言（-exp）" class="headerlink" title="负向零宽先行断言（?!exp）"></a>负向零宽先行断言（?!exp）</h4><font color="#ff494e" size="3" face="黑体"><br>    <code>ab(?!cd)</code> 表示匹配’ab’仅仅当’ab’后面不跟着’cd’<br></font>
-
-<blockquote>
-<p>示例一</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var str = &apos;abcdefg&apos;;</span><br><span class="line">var reg = /ab(?!cd)/; // 匹配&apos;ab&apos;仅仅当&apos;ab&apos;后面不跟着&apos;cd&apos;,</span><br><span class="line">str.match(reg); // null</span><br></pre></td></tr></table></figure>
-<ol>
-<li>首先匹配 <code>ab</code>，匹配成功之后，<code>cd</code> 开始匹配 <code>(?!cd)</code>，我们需要匹配的是 <code>ab</code> 后面不紧跟着 <code>cd</code>，根据 <code>str</code> 我们可以看到 <code>ab</code> 后面紧跟着 <code>cd</code>，所以匹配失败</li>
-<li>所以返回了 <code>null</code></li>
-</ol>
-<blockquote>
-<p>示例二</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var str = &apos;abcdefg&apos;;</span><br><span class="line">var reg = /ab(?!ab)cd/; // 匹配&apos;ab&apos;仅仅当&apos;ab&apos;后面不跟着&apos;cd&apos;,</span><br><span class="line">str.match(reg); // [&quot;abcd&quot;, index: 0, input: &quot;abcdefg&quot;]</span><br></pre></td></tr></table></figure>
-<ol>
-<li>首先匹配 <code>ab</code>，匹配成功之后，<code>cd</code> 开始匹配 <code>(?!ab)</code>，匹配成功。因为 <code>ab</code> 后面紧跟着的是 <code>cd</code> 而不是 <code>ab</code>，所以匹配成功。</li>
-<li>(?!ab) 匹配成功之后，因为是零宽断言，所以还是在 <code>cd</code> 的位置开始匹配 <code>cd</code>，匹配成功，返回结果</li>
-</ol>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/blogs/2018/06/30/LearnReg/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-LearnJSExtend" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blogs/2018/06/29/LearnJSExtend/">学习JS——继承(一)</a>
-    </h1>
-  
-
-        
-        <a href="/blogs/2018/06/29/LearnJSExtend/" class="archive-article-date">
-  	<time datetime="2018-06-28T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="ES5-继承类型"><a href="#ES5-继承类型" class="headerlink" title="ES5 继承类型"></a>ES5 继承类型</h2><blockquote>
-<p>ES5 中并没有传统的面向对象的概念，所以大家模拟了很多继承的方法，但本质上都是两种的变种：原型链继承，构造继承</p>
-</blockquote>
-<p>父类：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function Animal() &#123;</span><br><span class="line">	this.type = &apos;动物&apos;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>子类：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function Cat(name) &#123;</span><br><span class="line">	this.name = name;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="原型链继承（这种比较常见）"><a href="#原型链继承（这种比较常见）" class="headerlink" title="原型链继承（这种比较常见）"></a>原型链继承（这种比较常见）</h3><p>现在我们要让 <code>Cat</code> 继承 <code>Animal</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">// 将 Cat 的原型指向 Animal</span><br><span class="line">Cat.prototype = new Animal();</span><br><span class="line"></span><br><span class="line">// 上一句，会将 Cat 的 prototype 完全替换掉，</span><br><span class="line">// 在控制台是打印可以看到， Cat.prototype.constructor 已经指向了 Animal</span><br><span class="line">// 所以我们需要将其给重新指向 Cat, 不然创建的实例都将是指向 Animal的，</span><br><span class="line">// 这样就会导致继承链紊乱（这里不是很懂，紊乱会怎么样，会有什么后果不知道）</span><br><span class="line">Cat.prototype.constructor = Cat;</span><br><span class="line">var cat1 = new Cat(&apos;大橘&apos;);</span><br><span class="line">console.log(cat1.type); // 动物</span><br></pre></td></tr></table></figure>
-<h2 id="构造继承"><a href="#构造继承" class="headerlink" title="构造继承"></a>构造继承</h2><p>构造继承，我们需要在子类中加上 <code>apply</code> 或者 <code>call</code> 方法，将父类的构造函数绑定到子类中。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function Dog(name) &#123;</span><br><span class="line">	Animal.apply(this, arguments);</span><br><span class="line">	this.name = name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var dog1 = new Dog(&apos;旺旺&apos;);</span><br><span class="line">console.log(dog1.name) // 旺旺</span><br><span class="line">console.log(dog1.type) // 动物</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>此种继承方式只能继承父构造器中的属性，不能继承父构造器原型上的属性。Animal.apply(this, arguments) 也可用 Animal.call(this) 替换。Dog 对象有两个层级,第一级存放着自有属性以及父构造器中的属性，第二级存放着自己函数原型上的属性(Dog.prototype)。</p>
-</blockquote>
-<p><img src="./img/js 集成 dog 案例.png" alt="image"></p>
-<h2 id="组合继承"><a href="#组合继承" class="headerlink" title="组合继承"></a>组合继承</h2><p>顾名思义，将构造继承 和 原型链继承 组合到一起使用。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">function Fish(name) &#123;</span><br><span class="line">	Animal.call(this);</span><br><span class="line">	this.name = name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Fish.prototype = new Animal();</span><br><span class="line"></span><br><span class="line">// 新增方法</span><br><span class="line">Fish.prototype.say = function() &#123; </span><br><span class="line">	console.log(&apos;booooooo&apos;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var fish1 = new Fish(&apos;hah&apos;);</span><br><span class="line"></span><br><span class="line">fish1.say(); // booooooo</span><br></pre></td></tr></table></figure>
-<p>内存优化：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">function Fish(name) &#123;</span><br><span class="line">	Animal.call(this);</span><br><span class="line">	this.name = name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">(function() &#123;</span><br><span class="line">	// 创建一个没有实例的类</span><br><span class="line">	var Super = function() &#123;&#125;;</span><br><span class="line">	// 直接继承 prototype</span><br><span class="line">	Super.prototype  = Animal.prototype;</span><br><span class="line">	// 将实例作为子类的原型</span><br><span class="line">	Fish.prototype = new Super();</span><br><span class="line">	// 添加方法</span><br><span class="line">	Fish.prototype.say = function() &#123;</span><br><span class="line">		console.log(&apos;boooooo&apos;);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;)()</span><br></pre></td></tr></table></figure>
-<h2 id="直接继承-Prototype"><a href="#直接继承-Prototype" class="headerlink" title="直接继承 Prototype"></a>直接继承 Prototype</h2><blockquote>
-<p>这个方法是对 原型链继承 的改进，由于Animal 对象中，不变的属性都可以直接写入到<code>Animal.prototype</code>。所以我们可以直接继承 <code>Animal.prototype</code>。</p>
-</blockquote>
-<ol>
-<li>我们需要改写下 Animal</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">function Animal() &#123;&#125;;</span><br><span class="line">Animal.prototype.type = &apos;动物&apos;;</span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>将 <code>Panda.prototype</code>  指向 <code>Animal.prototype</code></li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function Panda(name) &#123;</span><br><span class="line">	this.name = name;</span><br><span class="line">&#125;;</span><br><span class="line">Panda.prototype = Animal.prototype;</span><br><span class="line">Panda.prototype.constructor = Panda;</span><br><span class="line">var panda1 = new Panda(&apos;熊熊&apos;);</span><br><span class="line">console.log(panda1.name); // 熊熊</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>总结，该方法比原型链继承要省内存一点，效率要高一点（少创建了一个实例）。<br>但是在这个方法里面 <code>Panda.prototype</code> 和 <code>Animal.prototype</code> 指向了同一个，那么改动 Panda.prototype.constructor 时，同时将 Animal.prototype.constructor 也改掉了，从而影响父构造器创建对象</p>
-</blockquote>
-<h2 id="利用空对象作为中介"><a href="#利用空对象作为中介" class="headerlink" title="利用空对象作为中介"></a>利用空对象作为中介</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">// 中介，中间层</span><br><span class="line">// F是空对象，几乎不占内存</span><br><span class="line">var F = function() &#123;&#125;;</span><br><span class="line">F.prototype = Animal.prototype;</span><br><span class="line"></span><br><span class="line">// 子类</span><br><span class="line">function Panda(name) &#123;</span><br><span class="line">	this.name = name;</span><br><span class="line">&#125;</span><br><span class="line">// 这里 Panda.prototype 就间接的指向了 Animal.prototype</span><br><span class="line">Panda.prototype = new F();</span><br><span class="line">// 这是改动 Panda.prototype.constructor 就不会影响到 Animal.prototype</span><br><span class="line">Panda.prototype.constructor = Panda;</span><br></pre></td></tr></table></figure>
-<p>所以我们可以将其封装成一个函数来进行调用</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function extend(subClass, supClass) &#123;</span><br><span class="line">	var F = function() &#123;&#125;;</span><br><span class="line">	F.prototype = supClass.prototype;</span><br><span class="line">	</span><br><span class="line">	subClass = new F();</span><br><span class="line">	subClass.prototype.constructor = subClass;</span><br><span class="line">	// 这里定义个 parent 属性 来指向 supClass.prototype</span><br><span class="line">	// 这样就可以通过 subClass.parent 来调用到父类的属性及方法</span><br><span class="line">	subClass.parent = supClass.prototype;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="拷贝继承"><a href="#拷贝继承" class="headerlink" title="拷贝继承"></a>拷贝继承</h2><blockquote>
-<p>把父类的所有属性和方法，拷贝进子类类实现继承。</p>
-</blockquote>
-<ol>
-<li>将 <code>Animal</code> 的所有不变属性都放到 <code>prototype</code> 上</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">function Animal() &#123;&#125;</span><br><span class="line">Animal.prototype.type = &apos;动物&apos;;</span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>再写一个函数来实现拷贝功能</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function copyExtend(sub, sup) &#123;</span><br><span class="line">	var parent = sup.prototype;</span><br><span class="line">	var child = sub.prototype;</span><br><span class="line">	</span><br><span class="line">	for (var key in parent) &#123;</span><br><span class="line">		child[key] = parent[key];</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	child.parent = parent;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ol start="3">
-<li>使用</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">copyExtend(Cat, Animal);</span><br><span class="line"></span><br><span class="line">var cat1 = new Cat(&apos;大橘&apos;);</span><br><span class="line">console.log(cat1.name); // 大橘</span><br><span class="line">console.log(cat1.type); // 动物</span><br></pre></td></tr></table></figure>
-<h2 id="最后附上自己的练习"><a href="#最后附上自己的练习" class="headerlink" title="最后附上自己的练习"></a>最后附上自己的练习</h2><p><a href="https://github.com/asd2766/exercise5.git" target="_blank" rel="noopener">https://github.com/asd2766/exercise5.git</a></p>
-<hr>
-<p>参考资料：</p>
-<ol>
-<li><a href="http://www.ruanyifeng.com/blog/2010/05/object-oriented_javascript_inheritance.html" target="_blank" rel="noopener">阮一峰 – Javascript面向对象编程（二）：构造函数的继承</a></li>
-</ol>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/blogs/2018/06/29/LearnJSExtend/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-learn-travis-ci-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blogs/2018/06/23/learn-travis-ci-1/">学习 Travis CI (一)</a>
-    </h1>
-  
-
-        
-        <a href="/blogs/2018/06/23/learn-travis-ci-1/" class="archive-article-date">
-  	<time datetime="2018-06-22T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="什么是-Travis-CI"><a href="#什么是-Travis-CI" class="headerlink" title="什么是 Travis CI"></a>什么是 Travis CI</h2><hr>
-<p>参考资料：</p>
-<ol>
-<li><a href="http://www.ruanyifeng.com/blog/2017/12/travis_ci_tutorial.html" target="_blank" rel="noopener">阮一峰 持续集成服务 Travis CI 教程</a></li>
-<li><a href="https://www.travis-ci.org/" target="_blank" rel="noopener">Travis CI 官方教程</a></li>
-</ol>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/blogs/2018/06/23/learn-travis-ci-1/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/blogs/page/2/">2</a><a class="extend next" rel="next" href="/blogs/page/2/">Next &raquo;</a>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -1320,8 +329,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
