@@ -6,18 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://asd2766.github.io/blogs">
-  <title>Archives | 白驹过隙的博客</title>
+  <title>Koa 学习笔记一 | 白驹过隙的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="开心快乐过好每一天">
-<meta property="og:type" content="website">
-<meta property="og:title" content="白驹过隙的博客">
-<meta property="og:url" content="https://asd2766.github.io/blogs/archives/index.html">
+  <meta name="description" content="Koa是什么 Koa 是一个新的 web 框架，由 Express 幕后的原班人马打造，致力于成为 web 应用和 API 开发领域中的一个更小、更富有表现力、更健壮的基石。  如何使用Koa根据 阮一峰 或者 廖雪峰 的教程来练习一遍，就能清晰的理解 Koa 的用法。 了解Egg.js Egg.js 为企业级框架和应用而生，希望由 Egg.js 孕育出更多上层框架，帮助开发团队和开发人员降低开发">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Koa 学习笔记一">
+<meta property="og:url" content="https://asd2766.github.io/blogs/2018/08/21/LearnKoa1/index.html">
 <meta property="og:site_name" content="白驹过隙的博客">
-<meta property="og:description" content="开心快乐过好每一天">
+<meta property="og:description" content="Koa是什么 Koa 是一个新的 web 框架，由 Express 幕后的原班人马打造，致力于成为 web 应用和 API 开发领域中的一个更小、更富有表现力、更健壮的基石。  如何使用Koa根据 阮一峰 或者 廖雪峰 的教程来练习一遍，就能清晰的理解 Koa 的用法。 了解Egg.js Egg.js 为企业级框架和应用而生，希望由 Egg.js 孕育出更多上层框架，帮助开发团队和开发人员降低开发">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-08-25T14:49:18.229Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="白驹过隙的博客">
-<meta name="twitter:description" content="开心快乐过好每一天">
+<meta name="twitter:title" content="Koa 学习笔记一">
+<meta name="twitter:description" content="Koa是什么 Koa 是一个新的 web 框架，由 Express 幕后的原班人马打造，致力于成为 web 应用和 API 开发领域中的一个更小、更富有表现力、更健壮的基石。  如何使用Koa根据 阮一峰 或者 廖雪峰 的教程来练习一遍，就能清晰的理解 Koa 的用法。 了解Egg.js Egg.js 为企业级框架和应用而生，希望由 Egg.js 孕育出更多上层框架，帮助开发团队和开发人员降低开发">
   
   
     <link rel="icon" href="/favicon.png">
@@ -147,295 +148,172 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-LearnKoa1" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      Koa 学习笔记一
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/blogs/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/blogs/2018/08/21/LearnKoa1/" class="archive-article-date">
+
+        
+        <a href="/blogs/2018/08/21/LearnKoa1/" class="archive-article-date">
   	<time datetime="2018-08-20T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-21</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blogs/2018/08/21/LearnKoa1/">Koa 学习笔记一</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Koa是什么"><a href="#Koa是什么" class="headerlink" title="Koa是什么"></a>Koa是什么</h2><blockquote>
+<p>Koa 是一个新的 web 框架，由 Express 幕后的原班人马打造，致力于成为 web 应用和 API 开发领域中的一个更小、更富有表现力、更健壮的基石。</p>
+</blockquote>
+<h2 id="如何使用Koa"><a href="#如何使用Koa" class="headerlink" title="如何使用Koa"></a>如何使用Koa</h2><p>根据 <a href="http://www.ruanyifeng.com/blog/2017/08/koa.html" target="_blank" rel="noopener">阮一峰</a> 或者 <a href="https://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/001471087582981d6c0ea265bf241b59a04fa6f61d767f6000" target="_blank" rel="noopener">廖雪峰</a> 的教程来练习一遍，就能清晰的理解 Koa 的用法。</p>
+<h2 id="了解Egg-js"><a href="#了解Egg-js" class="headerlink" title="了解Egg.js"></a>了解Egg.js</h2><blockquote>
+<p>Egg.js 为企业级框架和应用而生，希望由 Egg.js 孕育出更多上层框架，帮助开发团队和开发人员降低开发和维护成本。</p>
+</blockquote>
+<p><a href="https://eggjs.org/zh-cn/intro/quickstart.html" target="_blank" rel="noopener"><strong>指南</strong></a></p>
+<hr>
+<p>ps： <a href="https://www.cnblogs.com/Renyi-Fan/p/9004177.html" target="_blank" rel="noopener">为什么需要 node.js 做中间层</a></p>
+<hr>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://koa.bootcss.com/#introduction" target="_blank" rel="noopener">Koa</a></li>
+<li><a href="http://www.ruanyifeng.com/blog/2017/08/koa.html" target="_blank" rel="noopener">Koa 框架教程–阮一峰</a></li>
+<li><a href="https://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/001471087582981d6c0ea265bf241b59a04fa6f61d767f6000" target="_blank" rel="noopener">koa入门–廖雪峰</a></li>
+<li><a href="https://www.jianshu.com/p/3806417a1991?from=timeline" target="_blank" rel="noopener">三英战豪强，思绪走四方。浅谈我眼中的express、koa和koa2</a></li>
+</ol>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://asd2766.github.io/blogs/2018/08/21/LearnKoa1/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/blogs/2018/08/20/LearnNode1/" class="archive-article-date">
-  	<time datetime="2018-08-19T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-20</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/blogs/2018/08/20/LearnNode1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">nodejs写爬虫笔记</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blogs/2018/08/20/LearnNode1/">nodejs写爬虫笔记</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/blogs/2018/08/14/LearnSecurity/" class="archive-article-date">
-  	<time datetime="2018-08-13T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blogs/2018/08/14/LearnSecurity/">安全</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/blogs/2018/08/06/LearnWebPerformance2/" class="archive-article-date">
-  	<time datetime="2018-08-05T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blogs/2018/08/06/LearnWebPerformance2/">学习前端性能（二）</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/blogs/2018/07/30/LearnWebPerformance/" class="archive-article-date">
-  	<time datetime="2018-07-29T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-30</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blogs/2018/07/30/LearnWebPerformance/">学习前端性能（一）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/blogs/2018/07/22/learnTemplate/" class="archive-article-date">
-  	<time datetime="2018-07-21T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blogs/2018/07/22/learnTemplate/">学习模板语法</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/blogs/2018/07/20/LearnMonitor/" class="archive-article-date">
-  	<time datetime="2018-07-19T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blogs/2018/07/20/LearnMonitor/">学习前端性能监控</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/blogs/2018/07/10/LearnErrorHandler/" class="archive-article-date">
-  	<time datetime="2018-07-09T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-10</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blogs/2018/07/10/LearnErrorHandler/">学习错误捕捉（一）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/blogs/2018/06/30/LearnReg/" class="archive-article-date">
-  	<time datetime="2018-06-29T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-30</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blogs/2018/06/30/LearnReg/">学习正则表达式</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/blogs/2018/06/29/LearnJSExtend/" class="archive-article-date">
-  	<time datetime="2018-06-28T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blogs/2018/06/29/LearnJSExtend/">学习JS——继承(一)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/blogs/archives/page/2/">2</a><a class="extend next" rel="next" href="/blogs/archives/page/2/">Next &raquo;</a>
-    </nav>
   
 
 
@@ -459,8 +337,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
